@@ -10,7 +10,13 @@
          
  
    <head><link href="video-js.css" rel="stylesheet">
-  <script src="video.js"></script>
+  <script src="video.js">$(document).ready(function() {
+  $("#btn").on("click", function() {
+    $("#video").html("<source src='"+ $("#url").val() +"' type='application/x-mpegURL'>");
+    var ply = videojs("video");
+    ply.play();
+  });
+});</script>
   <script src="videojs-contrib-hls.js"></script>
       <meta charset="utf-8">
       <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
