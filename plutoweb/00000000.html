@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" >
-          
+            <link href="video-js.css" rel="stylesheet">
+  <script src="video.js"></script>
+  <script src="videojs-contrib-hls.js"></script>
+  
+
          <div class="logo">
 		 <h1 id="menu" color="WHITE" ><div><img src="https://i.ibb.co/nmW99h2/unnamed.jpg" alt="unnamed" border="0"></img></h>
   	    <h5><a  href="#menu"> Menú Principal - </a><a href="#inicio"> Inicio - </a><a href="#contenido1"> Contenido1 - </a><a href="#contenido2"> Contenido2 - </a><a href="#contenido3"> PlutoTV  - </a><a href="#acercade"> Acerca de </a>
@@ -322,8 +326,14 @@
          <br>
          <br>
          <br>
-	<h1 >TDT GEO</h1>
-	<embed src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8"></embed>
+	<h1 >TDT GEO</h1> 
+  <video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="268" 
+  data-setup='{}'>
+    <source src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8" type="application/x-mpegURL">
+  </video>
+  
+  <script>
+  </script>
 
          <br>
          <br>
