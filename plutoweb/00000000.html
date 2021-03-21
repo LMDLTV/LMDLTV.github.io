@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="es" >             
-    
+    	<script>$(document).ready(function() {
+  $("#btn").on("click", function() {
+    $("#video").html("<source src='"+ $("#url").val() +"' type='application/x-mpegURL'>");
+    var ply = videojs("video");
+    ply.play();
+  });
+});</script>
 
          <div class="logo">
 		 <h1 id="menu" color="WHITE" ><div><img src="https://i.ibb.co/nmW99h2/unnamed.jpg" alt="unnamed" border="0"></img></h>
@@ -22,13 +28,7 @@
 
       <meta name="viewport" >
       <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
-	<script>$(document).ready(function() {
-  $("#btn").on("click", function() {
-    $("#video").html("<source src='"+ $("#url").val() +"' type='application/x-mpegURL'>");
-    var ply = videojs("video");
-    ply.play();
-  });
-});</script><style>@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+<style>@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
            *{  
          text-align: center;
          margin: 0;
