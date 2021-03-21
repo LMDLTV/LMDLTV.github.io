@@ -354,90 +354,14 @@ transition-duration: 0s!important;
     <source src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8" type="application/x-mpegURL">
   </video>
 
-<script>
-var player = videojs('my_video_2');
-player.play();  var options;
-
-                            options = {
-                            plugins: {
-                                httpSourceSelector:
-                                {
-                                default: 'auto'
-                                }
-                            },
-                            youtube: {
-                                ytControls: 1, //1=YT control active
-                                playsinline: 1,
-                                modestbranding: 1,
-                                iv_load_policy: 3,
-                                rel: 0,
-                            },
-   	                        controls: true,
-                            preload: 'none',
-   	                        techOrder: [ 'chromecast', 'html5', 'youtube' ],
-                            html5: {
-                                hls: {
-                                overrideNative: !videojs.browser.IS_SAFARI,
-                                },
-                            }
-				            };
-
-(function(window, videojs) {
-    var player = window.player = videojs('streamplayer', options);
-    player.httpSourceSelector();
-    player.chromecast();
-    player.controls(true);
-    }(window, window.videojs));
-
-    function loadStream(){
-    console.log("Change stream to : "+document.getElementById("streamURL").value );
-    player.src({ type: "application/x-mpegURL", src: document.getElementById("streamURL").value });
-    player.controls(true);
-    };
-    function ytStream(){
-    console.log("Change stream to : "+document.getElementById("ytURL").value );
-    player.src({ type: "video/youtube", src: document.getElementById("ytURL").value });
-    player.controls(true);
-    player.play();
-    };
-    function ytnStream(){
-    console.log("Change stream to : "+document.getElementById("ytnURL").value );
-    player.src({ type: "video/youtube", src: document.getElementById("ytnURL").value });
-    player.controls(true);            
-    player.play();           
-    };
-    function adStream(){
-    console.log("Change stream to : "+document.getElementById("adURL").value );
-    player.src({ type: "application/x-mpegURL", src: document.getElementById("adURL").value });
-    player.controls(true);
-    player.play();
-    };
-    function LiveStream(){
-    console.log("Change stream to : "+document.getElementById("Live").value );
-    player.src({ type: "application/x-mpegURL", src: document.getElementById("Live").value });
-    player.controls(true);
-    player.play();
-    };
-    function bbStream(){
-    console.log("Change stream to : "+document.getElementById("bbURL").value );
-    player.src({ type: "application/x-mpegURL", src: document.getElementById("bbURL").value });
-    player.controls(true);
-    player.play();
-    };
-    function ADVbbStream(){
-    console.log("Change stream to : "+document.getElementById("ADVbbURL").value );
-    player.src({ type: "application/x-mpegURL", src: document.getElementById("ADVbbURL").value });
-    player.controls(true);
-    player.play();
-    };
-	</script>               
+            
 
 <h1>LA 2</h1>
 
  <video controls="controls">
-  <source src="https://rtvelivestream.akamaized.net/la3_dvr.m3u8" type="video/mp4" />
+  <source src="https://rtvelivestream.akamaized.net/la2_dvr.m3u8" type="video/mp4" />
 </video>
-<a href="https://rtvelivestream.akamaized.net/la3_dvr.m3u8">LINK</a>
+<a href="https://rtvelivestream.akamaized.net/la2_dvr.m3u8">LINK</a>
  <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
   data-setup='{}'>
     <source src="https://rtvelivestream.akamaized.net/la2_dvr.m3u8" type="application/x-mpegURL">
