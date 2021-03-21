@@ -326,19 +326,18 @@
          <br>
          <br>
          <br>
-	<h1 >TDT GEO</h1> 
+	<h1 >TDT GEO</h1> <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
 
-  <video id=canal1 width=960 height=540 class="video-js vjs-default-skin" controls>
-  <source
-     src="http://rtvelivestream.akamaized.net/la1_dvr.m3u8"
-     type="application/x-mpegURL">
+<input type="text" id="url" style="width:100%" value="https://rtvelivestream.akamaized.net/la1_dvr.m3u8"> <input type="button" id="btn" value="play">
+
+<br><br>
+
+<video id="video" class="video-js vjs-default-skin" preload="none" crossorigin="true" controls width="640" height="268" controls>
 </video>
-<script src="video.js"></script>
-<script src="videojs.hls.min.js"></script>
-<script>
-var player = videojs('canal1');
-player.play();
-</script>
+	
+
 
 
          <br>
