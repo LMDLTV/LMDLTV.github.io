@@ -410,7 +410,10 @@ transition-duration: 0s!important;
  <video id="my_video_1"  width="640" height="360" controls="true" controls preload="auto" class="video-js vjs-fluid vjs-default-skin" 
   data-setup='{}'>
     <source src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8" type="application/x-mpegURL">
-  </video>
+  </video><script>
+var player = videojs('my_video_1');
+player.play();
+</script>
   	<h1 >LA 2</h1>
 
  <video id="my_video_1"  width="640" height="360" controls="true" controls preload="auto" class="video-js vjs-fluid vjs-default-skin" 
