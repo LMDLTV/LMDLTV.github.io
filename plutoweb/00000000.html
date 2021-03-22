@@ -42,7 +42,504 @@ html,head{
   color: #1d1f20;
   font-size: 20px;
   font-weight: 500;
+  text-decoration: none;<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"><style>@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,head{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+.wrapper{
+  height: 60px;
+  width: 55vw;
+  background: #fff;
+  line-height: 60px;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+  position:fixed;  margin: 875px 7px;
+  background-color:black;
+  }
+.wrapper nav{
+  position: relative;
+  display: flex;
+
+}
+.wrapper nav label{
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+  cursor: pointer;  color:black;
+
+}
+.wrapper nav label a{
+  position: relative;
+  z-index: -1;
+  color: #1d1f20;
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
+  transition: color 0.6s ease;  ;
+ color:black;
+}
+.wrapper nav #home:checked ~ label.home a,
+.wrapper nav #inbox:checked ~ label.inbox a,
+.wrapper nav #contact:checked ~ label.contact a,
+.wrapper nav #heart:checked ~ label.heart a,
+.wrapper nav #about:checked ~ label.about a{
+  color: black;
+}
+.wrapper nav label a i{
+  font-size: 25px;
+  margin: 0 7px;  color: black;
+
+}
+.wrapper nav .tab{
+  position: relative;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+  background-color:cyan;  color: black;
+
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper nav #inbox:checked ~ .tab{
+  left: 20%;  color: black;
+
+}
+.wrapper nav #contact:checked ~ .tab{
+  left: 40%;  color: black;
+
+}
+.wrapper nav #heart:checked ~ .tab{
+  left: 60%;  color: black;
+
+}
+.wrapper nav #about:checked ~ .tab{
+  left: 80%;  color: black;
+
+}
+.wrapper nav input{
+  display: none;  color: black;
+
+}</style>
+    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+    <!-- <title>Elastic Tab Animation | CodingNepal</title> -->
+    <link rel="stylesheet" href="style.css">
+   
+  <body>
+    <div class="wrapper">
+      <nav>
+        <input type="radio" name="tab" id="home" checked>
+        <input type="radio" name="tab" id="inbox">
+        <input type="radio" name="tab" id="contact">
+        <input type="radio" name="tab" id="heart">
+        <input type="radio" name="tab" id="about">
+        <label for="#menu" class="home"><a href="#menu"><i class="fas fa-home"></i>Menu</a></label>
+        <label for="inbox" class="inbox"><a href="#inicio"><i class="far fa-comment"></i>Inicio</a></label>
+		        <label for="contact" class="contact"><a href="#contenido1"><i class="far fa-envelope"></i>Content.1</a></label>
+
+        <label for="contact" class="contact"><a href="#contenido2"><i class="far fa-envelope"></i>Content.2</a></label>
+        <label for="heart" class="heart"><a href="#contenido3"><i class="far fa-heart"></i>Content.3</a></label>
+        <label for="heart" class="heart"><a href="#contenido4"><i class="far fa-heart"></i>Content.4</a></label>
+
+        <label href="about" class="about"><a href="#acercade"><i class="far fa-user"></i>Acerca de</a></label>
+        <div class="tab">
+</div>
+</nav></div>
+
+<body>
+      <div >
+         <br>
+         <br>
+         <br>
+         <br>   
+         <div class="logo">
+		 <h1 id="menu" color="WHITE" ><div><img src="https://i.ibb.co/nmW99h2/unnamed.jpg" alt="unnamed" border="0"></img></h>
+  	    <h5><a  href="#menu"> Menú Principal - </a><a href="#inicio"> Inicio - </a><a href="#contenido1"> Contenido1 - </a><a href="#contenido2"> Contenido2 - </a><a href="#contenido3"> PlutoTV  - </a><a href="#acercade"> Acerca de </a>
+		 </h5></div>
+         
+         <h1 id="inicio">Inicio</h1>
+	 <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+       
+      
+         <br>
+         <br> Inicio <br>
+	 <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         </p>
+         <p>
+         <h1 id="contenido1">Contenido 1</h1>
+            <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br> Contenido 1<br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         </p>
+         <h1 id="contenido2">Contenido 2</h1>
+            <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+	<h1 >TDT GEO</h1>
+
+	
+<h1>TVE</h1>
+
+
+<a href="https://rtvelivestream.akamaized.net/la1_dvr.m3u8">LINK</a>
+ <video id="my_video_2" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8" type="application/x-mpegURL">
+  </video>
+
+            
+  
+         <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>LA 2</h1>
+
+<div>
+<a href="https://rtvelivestream.akamaized.net/la2_dvr.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://rtvelivestream.akamaized.net/la2_dvr.m3u8" type="application/x-mpegURL">
+	</video></div>
+     <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>24H</h1>
+
+<div>
+<a href="https://rtvelivestream.akamaized.net/24h_dvr.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://rtvelivestream.akamaized.net/24h_dvr.m3u8" type="application/x-mpegURL">
+	</video></div>
+     <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>TELEDEPORTE</h1>
+
+<div>
+<a href="https://hlsliveamdgl1-lh.akamaihd.net/i/hlsdvrlive_1@39732/master.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://hlsliveamdgl1-lh.akamaihd.net/i/hlsdvrlive_1@39732/master.m3u8" type="application/x-mpegURL">
+	</video></div>
+    <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>MTMAD 24H</h1>
+
+<div>
+<a href="https://mdssplive-lh.akamaihd.net/i/mtmad_1@744785/index_2500_av-b.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://mdssplive-lh.akamaihd.net/i/mtmad_1@744785/index_2500_av-b.m3u8" type="application/x-mpegURL">
+	</video></div>
+ <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>CLAN</h1>
+
+<div>
+<a href="https://hlsliveamdgl1-lh.akamaihd.net/i/hlslive_1@356291/master.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://hlsliveamdgl1-lh.akamaihd.net/i/hlslive_1@356291/master.m3u8" type="application/x-mpegURL">
+	</video></div>
+
+ <br> </br>
+         <br> </br>
+         <br> </br>
+<h1>CAZAVISION HD</h1>
+
+<div>
+<a href="https://cdn039.fractalmedia.es/hls/caz_es_high.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://cdn039.fractalmedia.es/hls/caz_es_high.m3u8" type="application/x-mpegURL">
+	</video></div>
+ <br> </br>
+         <br> </br>
+         <br> </br>
+
+
+<h1>TELEMADRID</h1>
+
+<div>
+<a href="https://telemadridhls-live-hls.secure.footprint.net/telemadrid/telemadrid1/bitrate_1.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://telemadridhls-live-hls.secure.footprint.net/telemadrid/telemadrid1/bitrate_1.m3u8" type="application/x-mpegURL">
+	</video></div>
+ <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>TV3 CATALANA</h1>
+
+<div>
+<a href="https://directes-tv-cat.ccma.cat/cat/ngrp:tv3_web/playlist.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="https://directes-tv-cat.ccma.cat/cat/ngrp:tv3_web/playlist.m3u8" type="application/x-mpegURL">
+	</video></div>
+ <br> </br>
+         <br> </br>
+         <br> </br>
+
+<h1>COSMO HD</h1>
+
+<div>
+<a href="http://91.126.141.201:1935/live/smil:cosmoHD.smil/playlist.m3u8">LINK</a>
+ <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+  data-setup='{}'>
+    <source src="http://91.126.141.201:1935/live/smil:cosmoHD.smil/playlist.m3u8" type="application/x-mpegURL">
+	</video></div>
+ <br> </br>
+         <br> </br>
+         <br> </br>
+
+ <br> </br>
+         <br> </br>
+         <br> </br>
+
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <p>
+         <h1 id="contenido3">SECCIÓN-PLUTOTV</h1>
+<p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>	   <h1 id="categPLUTO">Categorias</h1>
+<p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>
+         <br>
+         <br>
+	<h1 id="categPLUTOcine">CINE</h1>
+<p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+   <br>
+	<br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-estelar-es">Pluto TV - Estelar </a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-accion-es">Pluto TV - ACCION ES</a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-sci-fi-es">Pluto TV - SCI-FI </a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-thrillers-es">Pluto TV - THRILLERS </a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-romantico-es">Pluto TV - CINE ROMANTICO</a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-drama-es">Pluto TV - CINE DRAMA ES</a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-comedia-es">Pluto TV - CINE COMEDIA</a><br>
+	 <br> <a href="https://pluto.tv/live-tv/cine-latino-es">Pluto TV - CINE LATINO ES</a><br>
+	
+	<h1 id="categPLUTOseries">SERIES</h1>
+<p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+   <br>
+	<br> <a href="https://pluto.tv/live-tv/andromeda-es">Pluto TV - ANDROMEDA ES </a><br>
+	 <br> <a href="https://pluto.tv/live-tv/las-reglas-del-juego-es">Pluto TV - LAS REGLAS DEL JUEGO</a><br>
+	 <br> <a href="https://pluto.tv/live-tv/los-asesinatos-de-midsomer-es">Pluto TV - los-asesinatos-de-midsomer-es </a><br>
+	 <br> <a href="https://pluto.tv/live-tv/curro-jimenez-es">Pluto TV - curro-jimenez-es </a><br>
+	 <br> <a href="https://pluto.tv/live-tv/mutante-x-es">Pluto TV - mutante-x-es</a><br>
+	 <br> <a href="https://pluto.tv/live-tv/pluto-tv-series-es">Pluto TV - tv-series-es</a><br>
+
+		<h1 id="categPLUTOmtv">SERIES</h1>
+<p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+  <li>
+	   <p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> / > Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+<br>
+	<br> <a href="https://pluto.tv/live-tv/mtv-originals-es">MTV - ORIGINALS ES </a><br>
+
+
+	
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         </p>
+         <p>
+		 <h1 id="contenido4">Canales IPTV</h1>
+	 <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3"><a> Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+         <br>
+         <br>
+         <br>
+   	 <h1 id="lista1">Canales IPTV - LISTA1</h1>
+	 <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3"><a> Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+  	 <li><p><a  href="#menu"> Menú Principal </a><a href="#lista1">/ > Ir a Lista 1 / </a> <a href="#contenido4">Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+         <br>
+    <br>
+		<br>
+	<a href="http://k4.usastreams.com/ARBtv/ARBtv/playlist.m3u8">TELESISTEMA-ACCEDER</a>
+		         <br>
+	<a href="http://Stmv1.zcastbr.com/cineclubtv/cineclubtv/playlist.m3u8">CINECLUB-ACCEDER</a>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         </p>
+         <h1 id="acercade">Acerca de</h1>
+            <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br> Acerca de<br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         </p>
+      </div></body>
+
+</head>
+    </div>
+	
+</html>
   transition: color 0.6s ease;
 }
 .wrapper nav #home:checked ~ label.home a,
