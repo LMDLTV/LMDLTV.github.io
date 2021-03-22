@@ -10,12 +10,26 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style>@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
          *{  
-         text-align: center;
          margin: 0;
-         padding: 0;
-         box-sizing: border-box;
-         font-family: 'Poppins', sans-serif;
-         } 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+		 
+         }
+		 body{ display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;background-color:black;		 color:white;
+		 }
+		 .h{		 text-color:white;
+			}
+			P{text-color:white}
+		.a{		 text-decoration:none; color:white;          box-sizing: border-box;
+		}
+		a{		 text-decoration:none; color:cyan; 		text-size:100px;
+
+		}
+
          nav{
          display: flex;
          height: 80px;
@@ -110,21 +124,71 @@
          color: cyan;
          }
          }
-         .content{
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         text-align: center;
-         z-index: -1;
-         width: 100%;
-         padding: 0 30px;
-         color: #1b1b1b;
-         }
-         .content div{
-         font-size: 40px;
-         font-weight: 700;
-         }
+         
+.wrapper{
+  height: 60px;margin: 775px 0px;position:fixed;
+  width: 55vw;
+  background: #fff;
+  line-height: 60px;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+.wrapper nav{
+  position: relative;
+  display: flex;
+}
+.wrapper nav label{
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+.wrapper nav label a{
+  position: relative;
+  z-index: -1;
+  color: #1d1f20;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+.wrapper nav #home:checked ~ label.home a,
+.wrapper nav #inbox:checked ~ label.inbox a,
+.wrapper nav #contact:checked ~ label.contact a,
+.wrapper nav #heart:checked ~ label.heart a,
+.wrapper nav #about:checked ~ label.about a{
+  color: #fff;
+}
+.wrapper nav label a i{
+  font-size: 25px;
+  margin: 0 7px;
+}
+.wrapper nav .tab{
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 50px;
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper nav #inbox:checked ~ .tab{
+  left: 20%;
+}
+.wrapper nav #contact:checked ~ .tab{
+  left: 40%;
+}
+.wrapper nav #heart:checked ~ .tab{
+  left: 60%;
+}
+.wrapper nav #about:checked ~ .tab{
+  left: 80%;
+}
+.wrapper nav input{
+  display: none;
+}
+
       </style>
    </head>
    <body>
@@ -143,7 +207,29 @@
             <li><a href="#">Contacto</a></li>
          </ul>
       </nav>
+	  
+	
+	
+	
+	
+	
        <div >
+	     <div class="wrapper">
+      <nav>
+        <input type="radio" name="tab" id="home" checked>
+        <input type="radio" name="tab" id="inbox">
+        <input type="radio" name="tab" id="contact">
+        <input type="radio" name="tab" id="heart">
+        <input type="radio" name="tab" id="about">
+        <label for="home" class="home"><a href="#"><i class="fas fa-home"></i>Home</a></label>
+        <label for="inbox" class="inbox"><a href="#"><i class="far fa-comment"></i>Inbox</a></label>
+        <label for="contact" class="contact"><a href="#"><i class="far fa-envelope"></i>Contact</a></label>
+        <label for="heart" class="heart"><a href="#"><i class="far fa-heart"></i>Heart</a></label>
+        <label for="about" class="about"><a href="#"><i class="far fa-user"></i>About</a></label>
+        <div class="tab">
+</div>
+</nav>
+    </div>
          <h1 id="inicio">Inicio</h1>
 	 <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
             </p>
@@ -609,4 +695,4 @@
             <br>
          </p>
       </div>
-   </body>
+   </body></html>
