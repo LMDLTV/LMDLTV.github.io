@@ -136,13 +136,7 @@
          .content div{
          font-size: 40px;
          font-weight: 700;
-         }
-		 
-		 
-		 
-		 
-		 
-.wrapper{
+         }.wrapper{
   height: 60px;
   width: 55vw;
   background: #fff;
@@ -190,6 +184,7 @@
   bottom: 0;
   z-index: 0;
   border-radius: 50px;
+  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
   transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .wrapper nav #inbox:checked ~ .tab{
@@ -206,7 +201,6 @@
 }
 .wrapper nav input{
   display: none;
-}
       </style>
    </head>
    <body>
@@ -224,9 +218,7 @@
             <li><a href="#contenido2">Contenido2</a></li>
             <li><a href="#">Contacto</a></li>
          </ul>
-      </nav>
-	  
-	  <div class="wrapper">
+      </nav><div class="wrapper">
       <nav>
         <input type="radio" name="tab" id="home" checked>
         <input type="radio" name="tab" id="inbox">
@@ -240,8 +232,8 @@
         <label for="about" class="about"><a href="#"><i class="far fa-user"></i>About</a></label>
         <div class="tab">
 </div>
-
-
+</nav>
+    </div>
        <div >
          <h1 id="inicio">Inicio</h1>
 	 <p><a  href="#menu"> Menú Principal / </a><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
@@ -707,5 +699,5 @@
             <br>
             <br>
          </p>
-      </div>
+      </div> 
    </body></html>
