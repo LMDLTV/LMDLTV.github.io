@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" >
-   <head><link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js">  
-	</script>
+   <head>
       <meta charset="utf-8">
       <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
       <!-- <title>Menú de navegación responsive</title> -->
@@ -31,11 +28,8 @@
          }
 		 video {
 		 /* override other styles to make responsive */
-		position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  margin:100px 20px;
+		 width: 100%    !important;
+		 height: auto   !important;
 		 }
          nav{
          display: flex;
