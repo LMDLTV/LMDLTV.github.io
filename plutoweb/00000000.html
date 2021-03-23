@@ -158,21 +158,23 @@
          flex: 1;
          width: 100%;
          z-index: 1;
-         cursor: pointer;
+         cursor: pointer;         color: white;
+
          }
          .wrapper nav label a{
          position: relative;
          z-index: -1;
          color: #1d1f20;
          font-size: 20px;
-         font-weight: 500;
+         font-weight: 500;         color: white;
+
          }
          .wrapper nav #home:checked ~ label.home a,
          .wrapper nav #inbox:checked ~ label.inbox a,
          .wrapper nav #contact:checked ~ label.contact a,
          .wrapper nav #heart:checked ~ label.heart a,
          .wrapper nav #about:checked ~ label.about a{
-         color: #fff;
+         color: white;
          }
          .wrapper nav label a i{
          font-size: 25px;
@@ -216,16 +218,17 @@
             <li><a class="active" href="#inicio">Inicio</a></li>
             <li><a href="#contenido1">Contenido1</a></li>
             <li><a href="#contenido2">Contenido2</a></li>
-            <li><a href="#">Contacto</a></li>
+			<li><a href="#contenido3">Contenido1</a></li>
+			<li><a href="#acercade">Acerca de</a></li>
          </ul>
       </nav>
       <div class="wrapper">
          <nav>
-            <input type="radio" name="tab" id="home" checked>
-            <input type="radio" name="tab" id="inbox">
-            <input type="radio" name="tab" id="contact">
-            <input type="radio" name="tab" id="heart">
-            <input type="radio" name="tab" id="about">
+              <a href="#inicio"><input type="radio" name="tab" id="home" checked></a>
+            <a href="#contenido1"><input type="radio" name="tab" id="inbox"></a>
+            <a href="#contenido2"> <input type="radio" name="tab" id="contact"></a>
+            <a href="#contenido3"><input type="radio" name="tab" id="heart"></a>
+            <a href="#acercade"><input type="radio" name="tab" id="about"></a>
             <label for="home" class="home"><a href="#inicio"><i class="fas fa-home"></i>Inicio</a></label>
             <label for="inbox" class="inbox"><a href="#contenido1"><i class="far fa-comment"></i>Con1</a></label>
             <label for="contact" class="contact"><a href="#contenido2"><i class="far fa-comment"></i>Con2</a></label>
