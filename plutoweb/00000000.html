@@ -35,6 +35,8 @@
          display: flex;
          height: 80px;
          width: 100%;
+		                  /*Color navbar inferior*/
+
          background: #1b1b1b;
          align-items: center;
          justify-content: space-between;
@@ -89,13 +91,12 @@
          position: fixed;
          }
          #click:checked ~ .menu-btn i:before{
-         content: "\f00d";
          }
          nav ul{
          position: fixed;
          top: 80px;
          left: -100%;
-         background: #111;
+         background: #1b1b1b;;
          height: 100vh;
          width: 100%;
          text-align: center;
@@ -103,28 +104,34 @@
          transition: all 0.3s ease;
          }
          #click:checked ~ ul{
-         left: 0;
+         left: 0; 
+         color: white;
          }
          nav ul li{
          width: 100%;
          margin: 40px 0;
+         
          }
          nav ul li a{
+         color: black;
          width: 100%;
          margin-left: -100%;
          display: block;
          font-size: 20px;
          transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-         }
-         #click:checked ~ ul li a{
-         margin-left: 0px;
-         }
-         nav ul li a.active,
+         }  
+		 nav ul li a.active{	
          nav ul li a:hover{
-         background: none;
-         color: cyan;
+                 /*Color lista contenido botones fanfar*/
+		 background-color: white;
+         color: black;
+         
+         }}
+         #click:checked ~ ul li a{
+         margin-left: 0px;	
+		 background:white; color:black;
          }
-         }
+      
          .content{
          position: absolute;
          top: 50%;
@@ -142,8 +149,11 @@
          }
          .wrapper{
          height: 60px;
-         width: 105vw;
-         background: #fff;
+         width: 75vw;
+		 /*Color de barra de navegacion inferior*/
+		 		 /*Color de barra de navegacion inferior*/
+		 background-color: #808080;
+
          line-height: 60px;
          border-radius: 50px;
          box-shadow: 0 5px 10px rgba(0,0,0,0.25);
@@ -151,7 +161,11 @@
          position:fixed;
          }
          .wrapper nav{
-         position: relative;
+         position: relative;    
+
+		 /*Color de barra de navegacion inferior*/
+		 background-color: #w;
+
          display: flex;
          }
          .wrapper nav label{
@@ -236,7 +250,7 @@
             <a href="#acercade"><label for="about" class="about"><i class="far fa-user"></i><a href="#acercade">Acerca</a></label>
             <div class="tab"></div>
          </nav>
-      </div>
+      </div></nav>
       <div >
          <h1 id="inicio">Inicio</h1><br><br><br>
          <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
