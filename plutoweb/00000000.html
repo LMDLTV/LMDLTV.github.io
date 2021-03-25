@@ -33,7 +33,7 @@
 		 }
          nav{
          display: flex;
-         height: 75px;
+         height: 80px;
          width: 100%;
          background: #1b1b1b;
          align-items: center;
@@ -46,7 +46,11 @@
          font-size: 35px;
          font-weight: 600;
          }
-      
+         nav ul{
+         display: flex;
+         flex-wrap: wrap;
+         list-style: none;
+         }
          nav ul li{
          margin: 0 5px;
          }
@@ -85,27 +89,27 @@
          position: fixed;
          }
          #click:checked ~ .menu-btn i:before{
-              content: "\f00d";
+         content: "\f00d";
          }
-         nav ul{               
-		 position: fixed;
-         top: -175px;
+         nav ul{
+         position: fixed;
+         top: 80px;
          left: -100%;
-         background: #1b1b1b;
-         height: 50%;
-         width: 35%;
+         background: #111;
+         height: 100vw
+         width: 100%;
          text-align: center;
          display: block;
          transition: all 0.3s ease;
-		 margin-top:250px;	 
-
          }
          #click:checked ~ ul{
          left: 0;
          }
          nav ul li{
          width: 100%;
-         margin: 20px 0;
+         margin: 40px 0;         margin-left: 250%;
+		 background-color:#1b1b1b;
+
          }
          nav ul li a{
          width: 100%;
@@ -139,41 +143,30 @@
          font-weight: 700;
          }
          .wrapper{
-            height: 105vw;
+         height: 60px;
          width: 105vw;
-         background: #1b1b1b;
+         background: #fff;
          line-height: 60px;
          border-radius: 50px;
          box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-         margin: 830px 0px 0px 0px;
-		          pading: 0px 0px 0px 0px;
-				  transition:none; 
-				  margin-top:845;
-
-    list-style: none;
-    position:sticky;  z-index: 1;
-
-
-
+		 margin-top:720px;
+         margin: 650px auto auto auto;
+         position:fixed;
          }
          .wrapper nav{
          position: relative;
-         display: flex;         background: #1b1b1b;
-
+         display: flex;
          }
          .wrapper nav label{
          flex: 1;
          width: 100%;
          z-index: 1;
-         cursor: pointer;         color: white;         background: #1b1b1b;
-
+         cursor: pointer;         color: white;
 
          }
          .wrapper nav label a{
          position: relative;
-         z-index: -1;         background: #1b1b1b;		 padding-left:150px;
-
-
+         z-index: -1;
          color: #1d1f20;
          font-size: 20px;
          font-weight: 500;         color: white;
@@ -184,20 +177,17 @@
          .wrapper nav #contact:checked ~ label.contact a,
          .wrapper nav #heart:checked ~ label.heart a,
          .wrapper nav #about:checked ~ label.about a{
-         color: white;         background: #1b1b1b;
-
+         color: white;
          }
          .wrapper nav label a i{
-         font-size: 25px;         background: #1b1b1b;
-		 padding-left:150px;
-
+         font-size: 25px;
          margin: 0 7px;
          }
          .wrapper nav .tab{
          position: relative;
          height: 100%;
          width: 100%;
-		 padding-left:150px;
+         left: 0;
          bottom: 0;
          z-index: 0;
          border-radius: 50px;
@@ -216,39 +206,26 @@
          }
          .wrapper nav input{
          display: none;}
-		 
-		 header{position:fixed;
-		 height:100%;
-		 }
-		footer{position:fixed;
-		 height:100%;
-		 }      </style>
-	
-	  <header background-color="#1b1b1b">
-	  <nav><div class="logo" ></div>
-	  <input type="checkbox" id="click">
+      </style>
+   </head>
+   <body>
+   <nav>
+         <div class="logo">
+            Página web
+         </div>
+         <input type="checkbox" id="click">
          <label for="click" class="menu-btn">
          <i class="fas fa-bars"></i>
          </label>
          <ul>
-		    <li><a class="active" href=""></a></li>
             <li><a class="active" href="#inicio">Inicio</a></li>
             <li><a href="#contenido1">Contenido1</a></li>
             <li><a href="#contenido2">Contenido2</a></li>
             <li><a href="#">Contacto</a></li>
          </ul>
-          </div>
-         </div>
-      </nav>  
-       </nav></header>
-	 
-	  
-	  
-	  
-   </head>
-   <body>
-   <footer> <div class="wrapper">
-             <nav>
+      </nav>
+      <div class="wrapper">
+              <nav>
             <input type="radio" name="tab" id="home" checked>
             <input type="radio" name="tab" id="inbox">
             <input type="radio" name="tab" id="contact">
@@ -262,8 +239,8 @@
 
             <a href="#acercade"><label for="about" class="about"><i class="far fa-user"></i><a href="#acercade">Acerca</a></label>
             <div class="tab"></div>
-         </nav></footer>
-		 
+         </nav>
+      </div>
       <div >
          <h1 id="inicio">Inicio</h1><br><br><br>
          <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
@@ -720,4 +697,3 @@
       </div>
    </body>
 </html>
-
