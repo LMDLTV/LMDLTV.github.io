@@ -62,13 +62,12 @@
          padding: 8px 15px;
          border-radius: 5px;
          letter-spacing: 1px;
-         transition: all 0.3s ease;         background-color: white;
-
+         transition: all 0.3s ease;
          }
          nav ul li a.active,
          nav ul li a:hover{
          color: #111;
-         background-color: white;
+         background: #fff;
          }
          nav .menu-btn i{
          color: #fff;
@@ -96,26 +95,22 @@
          position: fixed;
          top: 80px;
          left: -100%;
-		 
-         background-color: #808080;
-		 color:white;
-         height: 75vh;
-         width: 80%;
+         background: #111;
+         height: 100vh;
+         width: 100%;
          text-align: center;
-		 align-items:right;
          display: block;
          transition: all 0.3s ease;
-		 margin:247px 70px;
          }
          #click:checked ~ ul{
          left: 0;
          }
          nav ul li{
-         width: 50%;
+         width: 100%;
          margin: 40px 0;
          }
          nav ul li a{
-         width: 50%;
+         width: 100%;
          margin-left: -100%;
          display: block;
          font-size: 20px;
@@ -138,7 +133,7 @@
          text-align: center;
          z-index: -1;
          width: 100%;
-         padding: 0 0px;
+         padding: 0 30px;
          color: #1b1b1b;
          }
          .content div{
@@ -149,8 +144,8 @@
          height: 60px;
          width: 105vw;
          background: #fff;
-         line-height: 10px;
-         border-radius: 10x;
+         line-height: 60px;
+         border-radius: 50px;
          box-shadow: 0 5px 10px rgba(0,0,0,0.25);
          margin: 720px -10px;
          position:fixed;
@@ -163,17 +158,15 @@
          flex: 1;
          width: 100%;
          z-index: 1;
-         cursor: pointer; 
-		 color: white;
+         cursor: pointer;         color: white;
 
          }
          .wrapper nav label a{
-         position: fixed;
+         position: relative;
          z-index: -1;
          color: #1d1f20;
          font-size: 20px;
          font-weight: 500;         color: white;
-         display: flex;
 
          }
          .wrapper nav #home:checked ~ label.home a,
@@ -185,10 +178,10 @@
          }
          .wrapper nav label a i{
          font-size: 25px;
-         margin: 0 0px;
+         margin: 0 7px;
          }
          .wrapper nav .tab{
-         position: fixed;
+         position: relative;
          height: 100%;
          width: 100%;
          left: 0;
@@ -212,13 +205,14 @@
          display: none;}
       </style>
    </head>
-   <body><nav><div class="logo">
+   <body>
+   <nav>
+         <div class="logo">
             Página web
-         </div></nav>
-   
-      <div class="wrapper"><nav>
-         
-         <input type="checkbox" id="click">
+         </div>
+      </nav>
+      <div class="wrapper">
+              <nav><nav>  <input type="checkbox" id="click">
          <label for="click" class="menu-btn">
          <i class="fas fa-bars"></i>
          </label>
@@ -227,9 +221,7 @@
             <li><a href="#contenido1">Contenido1</a></li>
             <li><a href="#contenido2">Contenido2</a></li>
             <li><a href="#">Contacto</a></li>
-         </ul>
-      </nav>
-              <nav>
+         </ul></nav><nav>
             <input type="radio" name="tab" id="home" checked>
             <input type="radio" name="tab" id="inbox">
             <input type="radio" name="tab" id="contact">
