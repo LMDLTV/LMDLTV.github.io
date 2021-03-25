@@ -93,11 +93,11 @@
          }
          nav ul{
          position: fixed;
-         top: 80px;
+         margin-top: -500px;
          left: -100%;
-         background: #111;
+		 background-color:#1b1b1b;
          height: 100vw
-         width: 100%;
+         width: 70%;
          text-align: center;
          display: block;
          transition: all 0.3s ease;
@@ -107,9 +107,11 @@
          }
          nav ul li{
          width: 100%;
-         margin: 40px 0;         margin-left: 250%;
-		 background-color:#1b1b1b;
+         margin: 40px 0;  
+         margin-left: 0%;
+		 
 
+		 background-color:#1b1b1b;
          }
          nav ul li a{
          width: 100%;
@@ -213,6 +215,10 @@
          <div class="logo">
             Página web
          </div>
+       
+      </nav>
+      <div class="wrapper" background-color="#1b1b1b">
+              <nav><nav>         
          <input type="checkbox" id="click">
          <label for="click" class="menu-btn">
          <i class="fas fa-bars"></i>
@@ -222,15 +228,7 @@
             <li><a href="#contenido1">Contenido1</a></li>
             <li><a href="#contenido2">Contenido2</a></li>
             <li><a href="#">Contacto</a></li>
-         </ul>
-      </nav>
-      <div class="wrapper">
-              <nav>
-            <input type="radio" name="tab" id="home" checked>
-            <input type="radio" name="tab" id="inbox">
-            <input type="radio" name="tab" id="contact">
-            <input type="radio" name="tab" id="heart">
-            <input type="radio" name="tab" id="about">
+         </ul><nav>
             <a href="#inicio"><label for="home" class="home"><i class="fas fa-home"></i><a href="#inicio"><h3>Inicio</h3></a></label>
             <a href="#contenido1"><label for="inbox" class="inbox"><i class="far fa-comment"></i><a href="#contenido1"><h3>Con1</h3></a></label>
             <a href="#contenido2"><label for="contact" class="contact"><i class="far fa-comment"></i><a href="#contenido2"><h3>Con2</h3></a></label>
