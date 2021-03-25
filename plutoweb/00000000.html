@@ -33,30 +33,40 @@
 		 }
          nav{
          display: flex;
-         height: 80px;
+         height: 75px;
          width: 100%;
          background: #1b1b1b;
-         align-items: center;
+         align-items:center-left;
          justify-content: space-between;
          padding: 0 50px 0 100px;
          flex-wrap: wrap;
          }
          nav .logo{
          color: #fff;
-         font-size: 35px;
-         font-weight: 600;
+         font-size: 70px;
+         font-weight: 600;		 background-color:#1b1b1b;
+
          }
          nav ul{
          display: flex;
          flex-wrap: wrap;
-         list-style: none;
+         list-style: none; position: fixed;
+         top: 100px;
+         left: -100%;       
+		 color:black;
+		 background-color:#1b1b1b;
+         height: 35vw;
+         width: 50%;
+         text-align: center;
+         display: block;
+         transition: all 0.3s ease;
          }
          nav ul li{
          margin: 0 5px;
          }
          nav ul li a{
-         color: #f2f2f2;
-         text-decoration: none;
+         text-decoration: none;		 background-color:#1b1b1b;
+
          font-size: 18px;
          font-weight: 500;
          padding: 8px 15px;
@@ -91,18 +101,7 @@
          #click:checked ~ .menu-btn i:before{
          content: "\f00d";
          }
-         nav ul{
-         position: fixed;
-         top: 80px;
-         left: -100%;
-		 color:black;
-		 background-color:#1b1b1b;
-         height: 100vw;
-         width: 100%;
-         text-align: center;
-         display: block;
-         transition: all 0.3s ease;
-         }
+       
          #click:checked ~ ul{
          left: 0;
          }
@@ -143,13 +142,14 @@
          }
          .wrapper{
          height: 60px;
-         width: 105vw;
-         background: #fff;
+         width: 99vw;
+         align-items:center-left;
+		background-color:#1b1b1b;
          line-height: 60px;
-         border-radius: 50px;
          box-shadow: 0 5px 10px rgba(0,0,0,0.25);
          margin: 720px -10px;
          position:fixed;
+		 right:10px;
          }
          .wrapper nav{
          position: relative;
@@ -213,18 +213,18 @@
             <input type="radio" name="tab" id="contact">
             <input type="radio" name="tab" id="heart">
             <input type="radio" name="tab" id="about">
-            <a href="#inicio"><label for="home" class="home"><a href="#inicio"><h7>Inicio</h7></a></label>
-            <a href="#contenido1"><label for="inbox" class="inbox"><a href="#contenido1"><h7>Con1</h7></a></label>
-            <a href="#contenido2"><label for="contact" class="contact"><a href="#contenido2"><h7>Con2</h7></a></label>
-            <a href="#contenido3"><label for="heart" class="heart"><a href="#contenido3"><h7>Con3</h7></a></label>
-			<a href="#contenido3"><label for="heart" class="heart"><a href="#contenido3"><h7>Con4</h7></a></label>
+            <a href="#inicio"><label for="home" class="home"><a href="#inicio"><h9>Inicio</h9></a></label>
+            <a href="#contenido1"><label for="inbox" class="inbox"><a href="#contenido1"><h9>Con1</h9></a></label>
+            <a href="#contenido2"><label for="contact" class="contact"><a href="#contenido2"><h9>Con2</h9></a></label>
+            <a href="#contenido3"><label for="heart" class="heart"><a href="#contenido3"><h9>Con3</h9></a></label>
+			<a href="#contenido3"><label for="heart" class="heart"><a href="#contenido3"><h9>Con4</h9></a></label>
 
             <div class="tab"></div>
          </nav>
       </div>
          
          <input type="checkbox" id="click">
-         <label for="click" class="menu-btn">
+         <label for="click" class="menu-btn"><br>
          <i class="fas fa-bars"></i>
          </label>
          <ul>
