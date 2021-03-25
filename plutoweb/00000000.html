@@ -89,7 +89,7 @@
          position: fixed;
          }
          #click:checked ~ .menu-btn i:before{
-         
+         content: "\f00d";
          }
          nav ul{
          position: fixed;
@@ -205,10 +205,11 @@
          display: none;}
       </style>
    </head>
-   <body><nav><div class="logo">
-         <pre>    Página web</pre></div></nav>
-      <div class="wrapper">
-              <div> <nav>
+   <body>
+   <nav>
+         <div class="logo">
+            Página web
+         </div>
          <input type="checkbox" id="click">
          <label for="click" class="menu-btn">
          <i class="fas fa-bars"></i>
@@ -218,7 +219,10 @@
             <li><a href="#contenido1">Contenido1</a></li>
             <li><a href="#contenido2">Contenido2</a></li>
             <li><a href="#">Contacto</a></li>
-         </ul><nav>
+         </ul>
+      </nav>
+      <div class="wrapper">
+              <nav>
             <input type="radio" name="tab" id="home" checked>
             <input type="radio" name="tab" id="inbox">
             <input type="radio" name="tab" id="contact">
@@ -232,9 +236,7 @@
 
             <a href="#acercade"><label for="about" class="about"><i class="far fa-user"></i><a href="#acercade">Acerca</a></label>
             <div class="tab"></div>
-         </nav><nav></nav	</div>
          </nav>
-  
       </div>
       <div >
          <h1 id="inicio">Inicio</h1><br><br><br>
