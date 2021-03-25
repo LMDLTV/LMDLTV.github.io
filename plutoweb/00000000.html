@@ -50,7 +50,15 @@
          display: flex;
          flex-wrap: wrap;
          list-style: none;         background: #1b1b1b;
-
+    position: fixed;
+         top: 140px;
+         left: -100%;
+         background: #111;
+         height: 45%;
+         width: 45%;
+         text-align: center;
+         display: block;
+         transition: all 0.3s ease;
          }
          nav ul li{
          margin: 0 5px;         background: #1b1b1b;
@@ -93,17 +101,7 @@
          #click:checked ~ .menu-btn i:before{
          
          }
-         nav ul{
-         position: fixed;
-         top: 140px;
-         left: -100%;
-         background: #111;
-         height: 45%;
-         width: 45%;
-         text-align: center;
-         display: block;
-         transition: all 0.3s ease;
-         }
+       
          #click:checked ~ ul{
          left: 0;
          }
