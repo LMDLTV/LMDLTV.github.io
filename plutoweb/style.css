@@ -6,7 +6,7 @@
          box-sizing: border-box;height:75vw;width:75%;
          font-family: 'Poppins', sans-serif;
          } 
-	 html,body{height:75vw; background-color:black;		 color:white;
+	 html,body{height:75vw;width:75%; background-color:black;		 color:white;
          }
          .h{		 text-color:white;
          }
