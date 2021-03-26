@@ -159,8 +159,18 @@ header::after{
   .site-nav a:focus{
       background: transparent;
   }
-  footer{position:fixed;}
-}</style>
+  .footer {
+  height: 50px;
+  z-index:-1;}
+  .content {
+  min-height: 100%;
+}
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+</style>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -641,6 +651,13 @@ header::after{
             <br>
             <br>
             </p>
-      </div>
-   </body><footer><h1>Final</h1></footer>
+      </div><div class="content">
+    <div class="content-inside">
+      aefaefaf
+    </div>
+  </div>
+<footer class="footer"></footer>
+
+   </body>  
 </html>
+
