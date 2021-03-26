@@ -5,8 +5,8 @@
          padding: 0;
          box-sizing: border-box;
          font-family: 'Poppins', sans-serif;
-         } html{height:75%; weight:75%}
-         body{background-color:black;		 color:white;
+         } 
+	 html,body{height:75vw; background-color:black;		 color:white;
          }
          .h{		 text-color:white;
          }
