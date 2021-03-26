@@ -3,10 +3,10 @@
          text-align: center;
          margin: 0;
          padding: 0;
-         box-sizing: border-box;width:75%;
+         box-sizing: border-box;width:100%;
          font-family: 'Poppins', sans-serif;
          } 
-	 html,body{width:75%; background-color:black;		 color:white;
+	 html,body{width:100%; background-color:black;		 color:white;
          }
          .h{		 text-color:white;
          }
