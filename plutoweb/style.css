@@ -23,7 +23,9 @@
          nav{
          display: flex;
          height: 80px;
-         width: 100%;
+         width: 100%;        
+         background: #1b1b1b;
+
          background-color: #1b1b1b;
          align-items: center;
          justify-content: space-between;
