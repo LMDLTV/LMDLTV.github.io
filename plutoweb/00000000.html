@@ -15,42 +15,38 @@ body{
     font-family: 'Roboto', sans-serif;    background: #1b1b1b; text-align:center;
 
 }
-h1{color:white;}h{color:white;}
-P{color:white;}div{color:white;}
+h1{color:white;}
+div{color:white;}
 
-a{color:red;decoration:none;}p{color:red;decoration:none;}
-
+a{color:red;text-decoration:none;}p{color:red;decoration:none;}
+.foot {
+    background: black;
+    color: #ebebd3;
+    padding: 2em 0;
+    position: sticky;
+	height:100%;
+    bottom:0px;
+	width:100vw;	max-height:700px; item-align:left;
+}
 .container{
     width: 95%;
     max-width: 1000px;
     margin: 0 auto;
 }
-p{color:white;}P{color:white;}
-.foot{
-    background: transparent;
+header{
+    background: black;
     color: #ebebd3;
-	    font-size: 2rem;
-
-    padding: 1em 0;font-family: 'Roboto', sans-serif; 
-	bottom:0px;
-    position:sticky;
-	width:100vw;	height:90%;align-items:left;
-
-}
-.container{}
-foot::after{
-    content: '';
-    clear: both;
-    display: block;
+    padding: 1em 0;
+    position: sticky;
+    top:0;
 }
 header{
     background: black;
     color: #ebebd3;
-    padding: 1em 0;	top:0px;
-    position:sticky;
-
+    padding: 1em 0;
+    position: sticky;
+    top:0;
 }
-
 header::after{
     content: '';
     clear: both;
@@ -65,11 +61,14 @@ header::after{
 }
 .logo span{
     font-weight: 300;
-}.site-nav{
+}
+.site-nav{
     top:100%;
     right:0; 
 	font-size: 0.5rem;
     color: white;
+	width:25vw;
+	height:25vw;
 
     position: absolute;
     background: #1b1b1b;
@@ -78,8 +77,8 @@ header::after{
 }
 .site-nav-open{
     clip-path: circle(350% at top right);
-	width:50vw;
-	height:50vw;
+	width:25vw;
+	height:25vw;
 	font-size: 0.5rem;background:black;
 
 	
@@ -87,7 +86,9 @@ header::after{
 .site-nav ul{
     margin: 0;
     padding: 0;
-    list-style: none;background:black;color:white;
+    list-style: none;
+	background:black;
+	color:white;
 }
 .site-nav li{
     border-bottom: 1px solid #575766;
@@ -179,8 +180,17 @@ header::after{
   .site-nav a:focus{
       background: transparent;
   }
-  footer{position:fixed;}
-}</style>
+
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}.transition { transition: all .1s ease; }
+
+.section {
+  padding: 2em;
+  text-align: center;
+}
+</style>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -661,10 +671,12 @@ header::after{
             <br>
             <br>
             </p>
-      </div><style>
+      </div><style>port url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
 .wrapper{
   height: 60px;
-  width: 100vw;
+  width: 100%;
   background: #fff;
   line-height: 60px;
   border-radius: 50px;
@@ -726,26 +738,145 @@ header::after{
 .wrapper nav input{
   display: none;
 }
-</style>
-   </body><footer class="foot">
-   
-   <div class="wrapper">
-   
-      <nav>
-        <input type="radio" name="tab" id="home" checked>
-        <input type="radio" name="tab" id="inbox">
-        <input type="radio" name="tab" id="contact">
-        <input type="radio" name="tab" id="heart">
-        <input type="radio" name="tab" id="about">
-        <label for="home" class="home"><a href="#inicio"><i class="fas fa-home"></i>Inicio</a></label>
-        <label for="inbox" class="inbox"><a href="#contenido1"><i></i>Con1</a></label>
-        <label for="contact" class="inbox"><a href="#contenido2"><i></i>Con2</a></label>
-        <label for="heart" class="inbox"><a href="#contenido3"><i></i>Con3</a></label>		
-        <label for="about" class="about"><a href="#acercade"><i></i>Acerca de</a></label>
-        <div class="tab">
-</div>
-</nav>
+section{
+	margin-bottom:3rem;	
+}
+.ccbtn {
+  font-size:20px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right:15px;
+  margin-bottom:15px;
+  text-transform:uppercase;
+}
+
+.ccbtn:hover {
+  opacity:0.9;
+  text-decoration: none;
+}
+
+/* Buttons Colors*/
+
+.btn-blue{
+	background: #3498db;
+}
+.btn-green{
+	background: #9ed151;
+}
+.btn-orange{
+	background: #cf9650;
+}
+.btn-red{
+	background: #d15551;
+}
+.btn-pink{
+	background: #cf4b86;
+}
+.btn-gray{
+	background: #665f5f;
+}
+
+/* Simple & Rounded Buttons*/
+
+.btn-simple{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+}
+.btn-rounded{
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+/* Embossed Buttons*/
+
+.btn-blue.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #0F64E9;
+}
+.btn-green.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #7aad2c;
+}
+.btn-orange.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #a66a21;
+}
+.btn-red.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #a82f2b;
+}
+.btn-pink.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #9a2459;
+}
+.btn-gray.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #514747;
+}
+
+.btn-small {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+.btn-medium {
+    font-size: 24px;
+    padding: 15px 30px;
+}
+.btn-big {
+    font-size: 30px;
+    padding: 20px 45px;
+}
+.credit {
+float: left;
+margin: 25px;
+text-align: center;
+}
+.credit a {
+color: #00B7EA;
+font-weight: bold;
+text-decoration: none;
+}
+.credit a:hover {
+color: #086cc1;
+
+}</style>
+<footer class="foot" background='navy' >
+
 
    
-   </footer>
+        <div>
+		<nav><div>
+		<a class="ccbtn btn-red btn-rounded" href="#inicio">Inicio</a>
+        <a class="ccbtn btn-blue btn-rounded" href="#contenido1">Cont1</a>
+        <a class="ccbtn btn-red btn-rounded" href="#contenido2">Cont2</a></div>			</nav>	<br><br><div>
+		<a class="ccbtn btn-green btn-rounded" href="#contenido2">Cont3</a>
+		<a class="ccbtn btn-pink btn-rounded" href="#acercade">Acerca de</a></div>
+		</nav>
+		
+		</div>
+		
+		
+</div>
+
+
+   </body>  
 </html>
+
+
+
