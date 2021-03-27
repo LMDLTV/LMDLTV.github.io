@@ -15,35 +15,42 @@ body{
     font-family: 'Roboto', sans-serif;    background: #1b1b1b; text-align:center;
 
 }
-h1{color:white;}
+h1{color:white;}h{color:white;}
+P{color:white;}div{color:white;}
+
 a{color:red;decoration:none;}p{color:red;decoration:none;}
-.foot {
-    background: black;
-    color: #ebebd3;
-    padding: 0.2em 0;
-    position: sticky;
-    bottom:0px;
-	width:100vw;	max-height:700px; item-align:left;
-}
+
 .container{
     width: 95%;
     max-width: 1000px;
     margin: 0 auto;
 }
-header{
-    background: black;
+p{color:white;}P{color:white;}
+.foot{
+    background: transparent;
     color: #ebebd3;
-    padding: 1em 0;
-    position: sticky;
-    top:0;
+	    font-size: 2rem;
+
+    padding: 1em 0;font-family: 'Roboto', sans-serif; 
+	bottom:0px;
+    position:sticky;
+	width:100vw;	height:90%;align-items:left;
+
+}
+.container{}
+foot::after{
+    content: '';
+    clear: both;
+    display: block;
 }
 header{
     background: black;
     color: #ebebd3;
-    padding: 1em 0;
-    position: sticky;
-    top:0;
+    padding: 1em 0;	top:0px;
+    position:sticky;
+
 }
+
 header::after{
     content: '';
     clear: both;
@@ -73,14 +80,14 @@ header::after{
     clip-path: circle(350% at top right);
 	width:50vw;
 	height:50vw;
-	font-size: 0.5rem;
+	font-size: 0.5rem;background:black;
 
 	
 }
 .site-nav ul{
     margin: 0;
     padding: 0;
-    list-style: none;background: #1b1b1b;color:white;
+    list-style: none;background:black;color:white;
 }
 .site-nav li{
     border-bottom: 1px solid #575766;
@@ -172,17 +179,8 @@ header::after{
   .site-nav a:focus{
       background: transparent;
   }
-
-.content-inside {
-  padding: 20px;
-  padding-bottom: 50px;
-}.transition { transition: all .1s ease; }
-
-.section {
-  padding: 2em;
-  text-align: center;
-}
-</style>
+  footer{position:fixed;}
+}</style>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -663,156 +661,91 @@ header::after{
             <br>
             <br>
             </p>
-      </div><style>port url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
-
-body {
-	background: #FFFFFF;
-	color: #000;
-	font-weight: 400;
-	font-size: 1em;
-	font-family: 'Lato', Arial, sans-serif;
-	margin:0;
-	padding:0;
-	padding-bottom:40px;
-}
+      </div><style>
 .wrapper{
-	 padding:3%;
-	 margin:0 auto;
+  height: 60px;
+  width: 100vw;
+  background: #fff;
+  line-height: 60px;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
 }
-section{
-	margin-bottom:3rem;	
+.wrapper nav{
+  position: relative;
+  display: flex;
 }
-.ccbtn {
-  font-size:20px;
-  font-family: Arial;
-  color: #ffffff;
-  padding: 10px 20px 10px 20px;
+.wrapper nav label{
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+.wrapper nav label a{
+  position: relative;
+  z-index: -1;
+  color: #1d1f20;
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
-  margin-right:15px;
-  margin-bottom:15px;
-  text-transform:uppercase;
+  transition: color 0.6s ease;
 }
-
-.ccbtn:hover {
-  opacity:0.9;
-  text-decoration: none;
+.wrapper nav #home:checked ~ label.home a,
+.wrapper nav #inbox:checked ~ label.inbox a,
+.wrapper nav #contact:checked ~ label.contact a,
+.wrapper nav #heart:checked ~ label.heart a,
+.wrapper nav #about:checked ~ label.about a{
+  color: #fff;
 }
-
-/* Buttons Colors*/
-
-.btn-blue{
-	background: #3498db;
+.wrapper nav label a i{
+  font-size: 25px;
+  margin: 0 7px;
 }
-.btn-green{
-	background: #9ed151;
+.wrapper nav .tab{
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #b1b1b1 0%,#000000 100%);
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.btn-orange{
-	background: #cf9650;
+.wrapper nav #inbox:checked ~ .tab{
+  left: 20%;
 }
-.btn-red{
-	background: #d15551;
+.wrapper nav #contact:checked ~ .tab{
+  left: 40%;
 }
-.btn-pink{
-	background: #cf4b86;
+.wrapper nav #heart:checked ~ .tab{
+  left: 60%;
 }
-.btn-gray{
-	background: #665f5f;
+.wrapper nav #about:checked ~ .tab{
+  left: 80%;
 }
-
-/* Simple & Rounded Buttons*/
-
-.btn-simple{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
+.wrapper nav input{
+  display: none;
 }
-.btn-rounded{
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
-}
-
-/* Embossed Buttons*/
-
-.btn-blue.btn-embossed{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
-	border-bottom: 0.4rem solid #0F64E9;
-}
-.btn-green.btn-embossed{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
-	border-bottom: 0.4rem solid #7aad2c;
-}
-.btn-orange.btn-embossed{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
-	border-bottom: 0.4rem solid #a66a21;
-}
-.btn-red.btn-embossed{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
-	border-bottom: 0.4rem solid #a82f2b;
-}
-.btn-pink.btn-embossed{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
-	border-bottom: 0.4rem solid #9a2459;
-}
-.btn-gray.btn-embossed{
-	-webkit-border-radius: 5;
-	-moz-border-radius: 5;
-	border-radius: 5px;	
-	border-bottom: 0.4rem solid #514747;
-}
-
-.btn-small {
-    font-size: 14px;
-    padding: 10px 20px;
-}
-.btn-medium {
-    font-size: 24px;
-    padding: 15px 30px;
-}
-.btn-big {
-    font-size: 30px;
-    padding: 20px 45px;
-}
-.credit {
-float: left;
-margin: 25px;
-text-align: center;
-}
-.credit a {
-color: #00B7EA;
-font-weight: bold;
-text-decoration: none;
-}
-.credit a:hover {
-color: #086cc1;
-
-}</style>
-<div class="foot" background='navy' >
-
+</style>
+   </body><footer class="foot">
+   
+   <div class="wrapper">
+   
+      <nav>
+        <input type="radio" name="tab" id="home" checked>
+        <input type="radio" name="tab" id="inbox">
+        <input type="radio" name="tab" id="contact">
+        <input type="radio" name="tab" id="heart">
+        <input type="radio" name="tab" id="about">
+        <label for="home" class="home"><a href="#"><i class="fas fa-home"></i>Inicio</a></label>
+        <label for="inbox" class="inbox"><a href="#"><i></i>Con1</a></label>
+        <label for="contact" class="inbox"><a href="#"><i></i>Con2</a></label>
+        <label for="heart" class="inbox"><a href="#"><i></i>Con3</a></label>		
+        <label for="about" class="about"><a href="#"><i></i>Acerca de</a></label>
+        <div class="tab">
+</div>
+</nav>
 
    
-        <div><a class="ccbtn btn-black btn-rounded" href="#inicio">Inicio</a>
-        <a class="ccbtn btn-blue btn-rounded" href="#contenido1">Cont1</a>
-        <a class="ccbtn btn-red btn-rounded" href="#contenido2">Cont2</a>
-		<a class="ccbtn btn-green btn-rounded" href="#contenido2">Cont3</a>
-		<a class="ccbtn btn-pink btn-rounded" href="#contenido2">Cont4</a>
-		</div>
-		
-		
-</div>
-
-
-   </body>  
+   </footer>
 </html>
-
-
