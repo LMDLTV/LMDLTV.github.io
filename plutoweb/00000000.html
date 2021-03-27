@@ -17,7 +17,14 @@ body{
 }
 h1{color:white;}
 a{color:red;decoration:none;}p{color:red;decoration:none;}
-
+.foot {
+    background: black;
+    color: #ebebd3;
+    padding: 0.2em 0;
+    position: sticky;
+    bottom:0px;
+	width:100vw;	max-height:700px; item-align:left;
+}
 .container{
     width: 95%;
     max-width: 1000px;
@@ -30,7 +37,13 @@ header{
     position: sticky;
     top:0;
 }
-
+header{
+    background: black;
+    color: #ebebd3;
+    padding: 1em 0;
+    position: sticky;
+    top:0;
+}
 header::after{
     content: '';
     clear: both;
@@ -159,15 +172,16 @@ header::after{
   .site-nav a:focus{
       background: transparent;
   }
-  .footer {
-  height: 50px;
-  margin-top: -50px;
-}
+
 .content-inside {
   padding: 20px;
   padding-bottom: 50px;
-}
+}.transition { transition: all .1s ease; }
 
+.section {
+  padding: 2em;
+  text-align: center;
+}
 </style>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -649,13 +663,156 @@ header::after{
             <br>
             <br>
             </p>
-      </div><div class="content">
-    <div class="content-inside">
-      aefaefaf
-    </div>
-  </div>
-<footer class="footer"></footer>
+      </div><style>port url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+	background: #FFFFFF;
+	color: #000;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Lato', Arial, sans-serif;
+	margin:0;
+	padding:0;
+	padding-bottom:40px;
+}
+.wrapper{
+	 padding:3%;
+	 margin:0 auto;
+}
+section{
+	margin-bottom:3rem;	
+}
+.ccbtn {
+  font-size:20px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right:15px;
+  margin-bottom:15px;
+  text-transform:uppercase;
+}
+
+.ccbtn:hover {
+  opacity:0.9;
+  text-decoration: none;
+}
+
+/* Buttons Colors*/
+
+.btn-blue{
+	background: #3498db;
+}
+.btn-green{
+	background: #9ed151;
+}
+.btn-orange{
+	background: #cf9650;
+}
+.btn-red{
+	background: #d15551;
+}
+.btn-pink{
+	background: #cf4b86;
+}
+.btn-gray{
+	background: #665f5f;
+}
+
+/* Simple & Rounded Buttons*/
+
+.btn-simple{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+}
+.btn-rounded{
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+/* Embossed Buttons*/
+
+.btn-blue.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #0F64E9;
+}
+.btn-green.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #7aad2c;
+}
+.btn-orange.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #a66a21;
+}
+.btn-red.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #a82f2b;
+}
+.btn-pink.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #9a2459;
+}
+.btn-gray.btn-embossed{
+	-webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #514747;
+}
+
+.btn-small {
+    font-size: 14px;
+    padding: 10px 20px;
+}
+.btn-medium {
+    font-size: 24px;
+    padding: 15px 30px;
+}
+.btn-big {
+    font-size: 30px;
+    padding: 20px 45px;
+}
+.credit {
+float: left;
+margin: 25px;
+text-align: center;
+}
+.credit a {
+color: #00B7EA;
+font-weight: bold;
+text-decoration: none;
+}
+.credit a:hover {
+color: #086cc1;
+
+}</style>
+<div class="foot" background='navy' >
+
+
+   
+        <div><a class="ccbtn btn-black btn-rounded" href="#inicio">Inicio</a>
+        <a class="ccbtn btn-blue btn-rounded" href="#contenido1">Cont1</a>
+        <a class="ccbtn btn-red btn-rounded" href="#contenido2">Cont2</a>
+		<a class="ccbtn btn-green btn-rounded" href="#contenido2">Cont3</a>
+		<a class="ccbtn btn-pink btn-rounded" href="#contenido2">Cont4</a>
+		</div>
+		
+		
+</div>
+
 
    </body>  
 </html>
+
 
