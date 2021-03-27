@@ -16,18 +16,8 @@ body{
 
 }
 h1{color:white;}
-div{color:white;}
+a{color:red;decoration:none;}p{color:red;decoration:none;}
 
-a{color:red;text-decoration:none;}p{color:red;decoration:none;}
-.foot {
-    background: black;
-    color: #ebebd3;
-    padding: 2em 0;
-    position: sticky;
-	height:100%;
-    bottom:0px;
-	width:100vw;	max-height:700px; item-align:left;
-}
 .container{
     width: 95%;
     max-width: 1000px;
@@ -40,13 +30,15 @@ header{
     position: sticky;
     top:0;
 }
-header{
+.foot{
     background: black;
     color: #ebebd3;
     padding: 1em 0;
     position: sticky;
-    top:0;
+    bottom:0;
 }
+
+
 header::after{
     content: '';
     clear: both;
@@ -61,14 +53,11 @@ header::after{
 }
 .logo span{
     font-weight: 300;
-}
-.site-nav{
+}.site-nav{
     top:100%;
     right:0; 
-	font-size: 1rem;
+	font-size: 0.5rem;
     color: white;
-	width:25vw;
-	height:25vw;
 
     position: absolute;
     background: #1b1b1b;
@@ -77,18 +66,16 @@ header::after{
 }
 .site-nav-open{
     clip-path: circle(350% at top right);
-	width:25vw;
-	height:25vw;
-	font-size: 0.5rem;background:black;
+	width:50vw;
+	height:50vw;
+	font-size: 0.5rem;
 
 	
 }
 .site-nav ul{
     margin: 0;
     padding: 0;
-    list-style: none;
-	background:black;
-	color:white;
+    list-style: none;background: #1b1b1b;color:white;
 }
 .site-nav li{
     border-bottom: 1px solid #575766;
@@ -180,16 +167,15 @@ header::after{
   .site-nav a:focus{
       background: transparent;
   }
-
+  .footer {
+  height: 50px;
+  margin-top: -50px;
+}
 .content-inside {
   padding: 20px;
   padding-bottom: 50px;
-}.transition { transition: all .1s ease; }
-
-.section {
-  padding: 2em;
-  text-align: center;
 }
+
 </style>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -671,10 +657,8 @@ header::after{
             <br>
             <br>
             </p>
-      </div><style>port url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
-
-
-.wrapper{
+      </div>
+  </div><style>.wrapper{
   height: 60px;
   width: 100%;
   background: #fff;
@@ -856,11 +840,8 @@ text-decoration: none;
 color: #086cc1;
 
 }</style>
-<footer class="foot" background='navy' >
-
-
-   
-        <div>
+<footer class="foot">
+       <div>
 		<nav><div>
 		<a class="ccbtn btn-red btn-rounded" href="#inicio">Inicio</a>
         <a class="ccbtn btn-blue btn-rounded" href="#contenido1">Cont1</a>
@@ -871,9 +852,7 @@ color: #086cc1;
 		
 		</div>
 		
-		
-</div>
-
+</footer>
 
    </body>  
 </html>
