@@ -42,8 +42,19 @@ integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZi
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}  
+}  .n{
   
+/**
+ * Esto es un comentario: 
+ * CABEZERA FIJADA
+ * -------------------------------------------------------------------
+ */
+  position:fixed;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  align:center;
+} 
 .header{
   
 /**
@@ -51,7 +62,7 @@ integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZi
  * CABEZERA FIJADA
  * -------------------------------------------------------------------
  */
-  position:fixed;background:green;
+  position:fixed;
   display: flex;
   height: 80px;
   width: 100%;
@@ -95,6 +106,11 @@ integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZi
   height: 60px;
   width: 100%;
 } 
+.linav{
+margin-left:50%;
+text-decoration:none;
+color:#FFFFFF;}
+.aaa{text-decoration:none;color:#FFFFFF;}
 .foot{
 /**
  * Esto es un comentario: 
@@ -134,7 +150,7 @@ nav{
  * PIE FIJADO
  * -------------------------------------------------------------------
  */
-  background:transparent;
+  background:green;
   
   align-items: center;
   justify-content: space-between;
@@ -294,7 +310,7 @@ nav ul li a:hover{
 }
 
 
-body{background:#393d42;}
+
 .content{
 
 	/**
@@ -312,32 +328,14 @@ body{background:#393d42;}
 align-items:center;
   z-index: -1;
   width: 100%;
-	/**
-	 * Esto es un comentario: 
-	 * 	/**
-	 * Esto es un comentario: 
-	 * COLOR FONDO DEL BODY
-	 * -------------------------------------------------------------------
-	 */
-	 * -------------------------------------------------------------------
-	 */background:#393d42;
-  padding: 150px 150px;     color: white;
-
-
+  padding: 150px 150px;   
+background:grey;
+  color: navy;
 }
-.content div{
-  font-size: 40px;    color: white;
+.content div{background:grey;
 
-	/**
-	 * Esto es un comentario: 
-	 * 	/**
-	 * Esto es un comentario: 
-	 * COLOR FONDO DEL BODY
-	 * -------------------------------------------------------------------
-	 */
-	 * -------------------------------------------------------------------
-	 */
-	background:#393d42;
+  font-size: 40px;  color: navy;
+
   font-weight: 700;
 }
 </style><style>
@@ -351,6 +349,7 @@ align-items:center;
     font-weight: 300;right:600px;
 }
 .site-nav{
+	right:600px;
 	bottom:0px;
 
 
@@ -372,7 +371,7 @@ align-items:center;
    color:white;
     clip-path: circle(3000% at top right);
 	position:relative;
-	
+	height:3%;
 	width:100%;	
 		height:100%;
 
@@ -391,8 +390,7 @@ align-items:center;
 }
 .site-nav ul{	
  position: fixed;
-  	bottom:100px;
-
+  
     background: transparent;
 	/**
 	 * Esto es un comentario: 
@@ -404,7 +402,6 @@ align-items:center;
 
 	margin-left:50px;
 	margin-top:140px;
-	
 	bottom:200px;
     height: 50%;
     width: 400px;  
@@ -419,10 +416,10 @@ align-items:center;
     display: block;  	
 }
 .site-nav li{  
-	right:100px;
-    border-bottom: 1px solid transparent;		left:300px;top:0;align:top;	z-index:-1
+
+    border-bottom: 1px solid #575766;		left:300px;top:0;align:top;	z-index:-1
 		height:35%;
-	width:100%;	background: color:transparent;
+	width:100%;	background: white;
 
 	bottom:50;
 	
@@ -430,7 +427,7 @@ align-items:center;
 
 }
 .site-nav li:last-child{
-    border-bottom: none;top;0;	z-index:-1;background: transparent;color:cyan;
+    border-bottom: none;top;0;	z-index:-1;background: white;color:cyan;
 
 }
 .site-nav a{
@@ -439,7 +436,7 @@ color:white;	z-index:-1;
 
 	width:375px;	
 	height:100%;
-background: color:transparent;
+background:green;
 	/**
 	 * Esto es un comentario: 
 	 * LETRAS MENU INFERIOR
@@ -482,6 +479,7 @@ color:white;bottom:50;
     position: absolute;
     top: .5em;
     right: .5em;
+
     
 }
 .menu-open .hamburger{
@@ -758,7 +756,8 @@ hj
         <div class="container">
 		<!--Nombre de aplicacion!--><style><style>.wrapper{
   height: 60px;
-  width: 100%;
+  width: 100%;margin-right:400px;
+
   background: black;
   line-height: 60px;
   border-radius: 50px;
@@ -823,15 +822,15 @@ hj
 section{
 	margin-bottom:3rem;	
 }
-.ccbtn {
-
-  font-size:16px;
-  font-family: Poppins;
+.ccbtn {	
+  font-size:20px;
+  font-family: Arial;
   color: #ffffff;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   margin-right:15px;
   margin-bottom:15px;
+  text-transform:uppercase;
 }
 
 .ccbtn:hover {
@@ -938,15 +937,13 @@ text-decoration: none;
 color: #086cc1;
 
 }</style><div class="foot2">
-          
-		<div class="nav">
+            <h1 class="logo">  <div>
+		<div>
 		<a class="ccbtn btn-red btn-rounded" href="#inicio">Inicio</a>
         <a class="ccbtn btn-blue btn-rounded" href="#contenido1">Cont1</a>
-        <a class="ccbtn btn-red btn-rounded" href="#contenido2">Cont2</a>		
-		<a class="ccbtn btn-green btn-rounded" href="#contenido3">Cont3</a>
-		<a class="ccbtn btn-black btn-rounded" href="#contenido4">Cont4</a>	
+        <a class="ccbtn btn-red btn-rounded" href="#contenido2">Cont2</a></div>			</nav>	<br><br><div>
+		<a class="ccbtn btn-green btn-rounded" href="#contenido2">Cont3</a>
 		<a class="ccbtn btn-pink btn-rounded" href="#acercade">Acerca de</a></div>
-
 		</nav>
 		
 		</div></div></span></h1>
