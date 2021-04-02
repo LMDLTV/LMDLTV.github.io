@@ -1,99 +1,882 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.js"></script>
+<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js">  
+</script>
 
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" 
+integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" 
+integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 
-    <title>Starter Template for Bootstrap</title>
+<script>function cambiarClase(){
+    let siteNav = document.getElementById('site-nav');
+        siteNav.classList.toggle('site-nav-open');
+    let menuOpen = document.getElementById('menu-toggle');
+        menuOpen.classList.toggle('menu-open');    
+        
+}</script>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
 
-    <!-- Custom CSS -->
-    <style>
-        body {
-            padding-top: 50px;
-        }
+<style>    .video-js .vjs-current-time { display: block; }
+    .video-js .vjs-time-divider { display: block; }
+    .video-js .vjs-duration { display: block; }
 
-        .starter-template {
-            padding: 40px 15px;
-            text-align: center;
-        }
-    </style>    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+body{
+  
+    font-family: 'Roboto', sans-serif;   
+     background: gray; text-align:center;
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+}
+.video{width:100%;height:50%;}
+h1{color:white;}
+a{color:red;text-decoration:none;}
+p{color:red;text-decoration:none;}
 
+.container{
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.headernavbar{
+     top:0; left:1px;
+    background: green;
+    color: #ebebd3;
+    position: fixed;height:60px;width:100%;
+    top:0;
+   
+}
+.footnavbar{
+    bottom:0; left:1px;
+    background: green;
+    color: #ebebd3;
+    position: fixed;height:60px;width:100%;
+}
+.navigationbarhead{    
+    position:fixed; 
+    top:0px; left:1px;margin-top:60px;
+
+
+background: rgba(34,34,34,0.75);
+height:60px;width:100%;
+}
+.navigationbarbottom{   position:fixed; 
+    bottom:0px; left:1px;margin-bottom:60px;
+
+
+background: rgba(34,34,34,0.75);
+height:60px;width:100%;
+}
+header::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+</style>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <title>Menu responsive</title>
 </head>
-
 <body>
+    <header>
+        
+    </header>
+    <div >
+         <h1 id="inicio">Inicio</h1><br><br><br>
+         <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+         </p>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br> Inicio <br>
+         <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+         </p>
+         <a href="#contenido1">Ir a Contenido1></a><br>
+         <a href="#contenido2">Ir a Contenido2></a>
+         <p>
+         <h1 id="contenido1">Contenido 1</h1><br><br><br>
+         <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+         </p>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br> Contenido 1<br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br> Inicio<br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         </p>
+         <h1 id="contenido2">Contenido 2</h1><br><br><br>
+         <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+         </p>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <h1 >TDT GEO</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         <h1>TVE</h1>
+         <a href="https://rtvelivestream.akamaized.net/la1_dvr.m3u8">LINK</a>
+         <video id="my_video_2" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+            data-setup='{}'>
+            <source src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8" type="application/x-mpegURL">
+         </video>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>LA 2</h1>
+         <div>
+            <a href="https://rtvelivestream.akamaized.net/la2_dvr.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://rtvelivestream.akamaized.net/la2_dvr.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>24H</h1>
+         <div>
+            <a href="https://rtvelivestream.akamaized.net/24h_dvr.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://rtvelivestream.akamaized.net/24h_dvr.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>TELEDEPORTE</h1>
+         <div>
+            <a href="https://hlsliveamdgl1-lh.akamaihd.net/i/hlsdvrlive_1@39732/master.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://hlsliveamdgl1-lh.akamaihd.net/i/hlsdvrlive_1@39732/master.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>MTMAD 24H</h1>
+         <div>
+            <a href="https://mdssplive-lh.akamaihd.net/i/mtmad_1@744785/index_2500_av-b.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://mdssplive-lh.akamaihd.net/i/mtmad_1@744785/index_2500_av-b.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>CLAN</h1>
+         <div>
+            <a href="https://hlsliveamdgl1-lh.akamaihd.net/i/hlslive_1@356291/master.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://hlsliveamdgl1-lh.akamaihd.net/i/hlslive_1@356291/master.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>CAZAVISION HD</h1>
+         <div>
+            <a href="https://cdn039.fractalmedia.es/hls/caz_es_high.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://cdn039.fractalmedia.es/hls/caz_es_high.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>TELEMADRID</h1>
+         <div>
+            <a href="https://telemadridhls-live-hls.secure.footprint.net/telemadrid/telemadrid1/bitrate_1.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://telemadridhls-live-hls.secure.footprint.net/telemadrid/telemadrid1/bitrate_1.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>TV3 CATALANA</h1>
+         <div>
+            <a href="https://directes-tv-cat.ccma.cat/cat/ngrp:tv3_web/playlist.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="https://directes-tv-cat.ccma.cat/cat/ngrp:tv3_web/playlist.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <h1>COSMO HD</h1>
+         <div>
+            <a href="http://91.126.141.201:1935/live/smil:cosmoHD.smil/playlist.m3u8">LINK</a>
+            <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+               data-setup='{}'>
+               <source src="http://91.126.141.201:1935/live/smil:cosmoHD.smil/playlist.m3u8" type="application/x-mpegURL">
+            </video>
+         </div>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <br> </br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <h1 id="contenido1">Contenido 1</h1>
+         <a href="#inicio">Volver a Inicio<</a><br>
+         <a href="#contenido2">Ir a contenido2></a>
+         <p>
+         <h1 id="contenido3">SECCIÓN-PLUTOTV</h1><br><br><br>
+	 <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
 
-<!-- Navigation --><nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header navbar-left pull-left">
-      <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-      <a href="/" class="navbar-brand">GNOMIS</a>   
-    </div>
-    
-    <div class="navbar-header navbar-right pull-right">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/locator">Locator</a></li>
-        <li><a href="/extras">Extras</a></li>
-      </ul>
-    </div>
-    
-    <div class="visible-xs-block clearfix"></div>
-    
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-left">
-        <li><a href="/news">News</a></li>
-        <li><a href="/Shop">Shop</a></li>
-      </ul>
-      <!--
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/locator">Locator</a></li>
-        <li><a href="/extras">Extras</a></li>
-      </ul>
--->
-
-    </div>
+         <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+         </p>
+         <h1 id="categPLUTO">Categorias</h1>
+         <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+         </p>
+         <br>
+         <br>
+         <h1 id="categPLUTOcine">CINE</h1>
+         <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+            <br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-estelar-es">Pluto TV - Estelar </a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-accion-es">Pluto TV - ACCION ES</a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-sci-fi-es">Pluto TV - SCI-FI </a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-thrillers-es">Pluto TV - THRILLERS </a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-romantico-es">Pluto TV - CINE ROMANTICO</a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-drama-es">Pluto TV - CINE DRAMA ES</a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-comedia-es">Pluto TV - CINE COMEDIA</a><br>
+            <br> <a href="https://pluto.tv/live-tv/cine-latino-es">Pluto TV - CINE LATINO ES</a><br>
+         <h1 id="categPLUTOseries">SERIES</h1>
+         <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+            <br>
+            <br> <a href="https://pluto.tv/live-tv/andromeda-es">Pluto TV - ANDROMEDA ES </a><br>
+            <br> <a href="https://pluto.tv/live-tv/las-reglas-del-juego-es">Pluto TV - LAS REGLAS DEL JUEGO</a><br>
+            <br> <a href="https://pluto.tv/live-tv/los-asesinatos-de-midsomer-es">Pluto TV - los-asesinatos-de-midsomer-es </a><br>
+            <br> <a href="https://pluto.tv/live-tv/curro-jimenez-es">Pluto TV - curro-jimenez-es </a><br>
+            <br> <a href="https://pluto.tv/live-tv/mutante-x-es">Pluto TV - mutante-x-es</a><br>
+            <br> <a href="https://pluto.tv/live-tv/pluto-tv-series-es">Pluto TV - tv-series-es</a><br>
+         <h1 id="categPLUTOmtv">MTV</h1>
+         <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a href="#contenido2"> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+         <li>
+            <p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv"><a href="" > Ir a MTV </a> <a href="#contenido2"> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+               <br>
+               <br> <a href="https://pluto.tv/live-tv/mtv-originals-es">MTV - ORIGINALS ES </a><br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br> Contenido 1<br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+            </p>
+            <h1 id="contenido2">Contenido 2</h1>
+            <a href="#inicio">Volver a Inicio<</a><br>
+            <a href="#contenido1">Ir a contenido1<</a>
+            <p><br><br><br>
+            <h1 id="contenido4">Canales IPTV</h1><br><br><br>
+         <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+               <br>
+               <br>
+               <br>
+		<p><a href="#inicio">Ir a Inicio > / </a><a href="#cineestable">/ > Ir a CineEstable / </a> <a href="#contenido4">Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+   	       <br>
+               <br>
+               <br>
+		    
+            <h1 id="cineestable">Canales IPTV - CINE ESTABLE</h1><br><br><br>
+            <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3"><a> Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+         <li>
+            <p><a href="#inicio">Ir a Inicio > / </a><a href="#cineestable">/ > Ir a CineEstable / </a> <a href="#contenido4">Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+               <br>
+               <br>
+               <br>
+               <a href="http://k4.usastreams.com/ARBtv/ARBtv/playlist.m3u8">TELESISTEMA-ACCEDER</a>
+               <br>
+	       <br>
+               <a href="http://Stmv1.zcastbr.com/cineclubtv/cineclubtv/playlist.m3u8">CINECLUB-ACCEDER</a>
+               <br>
+	       <br>
+	       <a href="https://cloud2.streaminglivehd.com:1936/8070/8070/playlist.m3u8?PlaylistM3UCL">FMTV1-ACCEDER</a>
+               <br>
+	       <br>
+	       <a href="https://rtmp02.portalexpress.es/fmtvmovies2/fmtvmovies2/playlist.m3u8?PlaylistM3UCL">FMTV2-ACCEDER</a>
+               <br>
+               <br>
+	       <a href="https://rtmp02.portalexpress.es/fmtv3/fmtv3/playlist.m3u8?PlaylistM3UCL">FMTV3-ACCEDER</a>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+            </p>
+            <h1 id="acercade">Acerca de</h1>
+            <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> Acerca de<br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br> Contenido 2<br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            </p>
+      </div>
   </div>
-</nav>
-        <!--/.nav-collapse -->
+  
+  
+  <style>
+.nav-fostrap {
+  display: block;
+  margin-bottom: 15px 0;
+  background: #03A9F4;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
+}
+
+.nav-fostrap ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.nav-fostrap li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  font-size: 14;
+  color: #def1f0;
+}
+
+.nav-fostrap li a {
+  padding: 15px 20px;
+  font-size: 14;
+  color: #def1f0;
+  display: inline-block;
+  outline: 0;
+  font-weight: 400;
+}
+
+.nav-fostrap li:hover ul.dropdown { display: block; }
+
+.nav-fostrap li ul.dropdown {
+  position: absolute;
+  display: none;
+  width: 200px;
+  background: #2980B9;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding-top: 0;
+}
+
+.nav-fostrap li ul.dropdown li {
+  display: block;
+  list-style-type: none;
+}
+
+.nav-fostrap li ul.dropdown li a {
+  padding: 15px 20px;
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  font-weight: 400;
+}
+
+.nav-fostrap li ul.dropdown li:last-child a { border-bottom: none; }
+
+.nav-fostrap li:hover a {
+  background: #2980B9;
+  color: #fff !important;
+}
+
+.nav-fostrap li:first-child:hover a { border-radius: 3px 0 0 3px; }
+
+.nav-fostrap li ul.dropdown li:hover a { background: rgba(0,0,0, .1); }
+
+.nav-fostrap li ul.dropdown li:first-child:hover a { border-radius: 0; }
+
+.nav-fostrap li:hover .arrow-down { border-top: 5px solid #fff; }
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #def1f0;
+  position: relative;
+  top: 15px;
+  right: -5px;
+  content: '';
+}
+.title-mobile {
+  display: none;
+}
+ @media only screen and (max-width:30000px) {
+
+.nav-fostrap {
+  background: green;
+  color:white;
+  width: 200px;
+  height: 100%;
+  display: block;
+  position: fixed;
+  right: -200px;
+  top:0px;
+  -webkit-transition: left 0.25s ease;
+  -moz-transition: left 0.25s ease;
+  -ms-transition: left 0.25s ease;
+  -o-transition: left 0.25s ease;
+  transition: left 0.25s ease;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+.title-mobile {
+  position: fixed;
+  display: block;
+    top: 10px;
+    font-size: 20px;
+    left: 1px;
+    right: 100px;
+    text-align: left;
+    color: #FFF;
+}
+.nav-fostrap.visible {
+  right: 0px;
+  -webkit-transition: left 0.25s ease;
+  -moz-transition: left 0.25s ease;
+  -ms-transition: left 0.25s ease;
+  -o-transition: left 0.25s ease;
+  transition: left 0.25s ease;
+}
+
+.nav-bg-fostrap {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #03A9F4;
+  padding: 12px 0 0 10px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.navbar-fostrap {
+  display: inline-block;
+  vertical-align: middle;
+  height: 50px;
+  cursor: pointer;
+  margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+}
+
+.navbar-fostrap span {
+  height: 2px;
+  background: #fff;
+  margin: 5px;
+  display: block;
+  width: 20px;
+}
+
+.navbar-fostrap span:nth-child(2) { width: 20px; }
+
+.navbar-fostrap span:nth-child(3) { width: 20px; }
+
+.nav-fostrap ul { padding-top: 50px; }
+
+.nav-fostrap li { display: block; }
+
+.nav-fostrap li a {
+  display: block;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-fostrap li:first-child:hover a { border-radius: 0; }
+
+.nav-fostrap li ul.dropdown { position: relative; }
+
+.nav-fostrap li ul.dropdown li a {
+  background: #2980B9 !important;
+  border-bottom: none;
+  color: #fff !important;
+}
+
+.nav-fostrap li:hover a {
+  background: #03A9F4;
+  color: #fff !important;
+}
+
+.nav-fostrap li ul.dropdown li:hover a {
+  background: rgba(0,0,0,.1); !important;
+  color: #fff !important;
+}
+
+.nav-fostrap li ul.dropdown li a { padding: 10px 10px 10px 30px; }
+
+.nav-fostrap li:hover .arrow-down { border-top: 5px solid #fff; }
+
+.arrow-down {
+  border-top: 5px solid #505050;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.cover-bg {
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+}
+ @media only screen and (max-width:30000px) {
+        }
+.container { width: 96%; }
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+</style><script>
+$(document).ready(function(){
+		$('.navbar-fostrap').click(function(){
+			$('.nav-fostrap').toggleClass('visible');
+			$('body').toggleClass('cover-bg');
+		});
+	});</script>
+  
+  
+  
+<footer class="headernavbar">
+  <div class="container">
+  
+    <div  style="margin-top:150px;margin-bottom:30px;text-align:center;">
+      
     </div>
-    <!-- /.container -->
-</nav>
+	
+    <nav>
+      <div class="nav-fostrap">
+        <ul>
+		  <li><a href=""><p> </p></a></li>
+		  <li><a href=""><p> </p></a></li>
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <div class="starter-template">
-            <h1>Bootstrap starter template</h1>
-
-            <p class="lead">Complete with pre-defined CDN paths!</p>
-
-            <p><a href="http://getbootstrap.com/getting-started/">http://getbootstrap.com/getting-started/</a></p>
-        </div>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="javascript:void(0)">Web Design<span class="arrow-down"></span></a>
+            <ul class="dropdown">
+              <li><a href="#contenido1">HTML</a></li>
+              <li><a href="">CSS</a></li>
+              <li><a href="">Javascript</a></li>
+              <li><a href="">JQuery</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)" >Blogger<span class="arrow-down"></span></a>
+            <ul class="dropdown">
+              <li><a href="">Widget</a></li>
+              <li><a href="">Tips</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)" >SEO<span class="arrow-down"></span></a>
+            <ul class="dropdown">
+              <li><a href="">Tools</a></li>
+              <li><a href="">Backlink</a></li>
+            </ul>
+          </li>
+          <li><a href="">Google Adsense</a></li>
+          <li><a href="">Advertising</a></li>
+          <li><a href="">Business</a></li>
+        </ul>
+      </div>
+      <div class="nav-bg-fostrap">
+        <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
+        <a href="" class="title-mobile">Fostrap</a>
+      </div>
+    </nav>
+    <div class='content'>
     </div>
-    <!-- /.row -->
 </div>
-<!-- /.container -->
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</body>
+</div>
+</header>
+
+</footer>
+
+<footer class="footnavbar">
+       <div>
+		
+		</div>
+		
+</footer>
+
+<footer class="navigationbarhead">
+    <div>
+        head nav
+     </div>
+     
+</footer>
+<footer class="navigationbarbottom">
+    <div>
+     pie nav
+     </div>
+     
+</footer>
+   </body>  
 </html>
+
+
+
+
+
+
