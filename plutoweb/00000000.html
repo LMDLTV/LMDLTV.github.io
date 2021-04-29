@@ -425,6 +425,868 @@ align-items:center;
 <br><br><br><br>
 <br><br><br><br><br><br>
 
+<!DOCTYPE html>
+<html lang="es">
+   <meta charset="UTF-8">
+   <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+   <script src="https://unpkg.com/video.js/dist/video.js"></script>
+   <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js">  </script>
+   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+   <script src="jquery-3.5.1.min.js"></script>
+   <style>
+      .html,body{
+      font-family: 'Roboto', sans-serif;   
+      background: gray; text-align:center;
+      }
+      nav{width:100%;height:0px;}
+      h1{color:white;}
+      a{color:red;text-decoration:none;}
+      p{color:red;text-decoration:none;}
+      .container{
+      width: 95%;
+      max-width: 1000px;
+      margin: 0 auto;
+      }
+      header.dark blockquote { color:#fff; }
+      header.light blockquote { color:#000; }
+      blockquote { 
+      max-width: 1000px; 
+      margin:0 auto;
+      font-size: 16px; 
+      border-left: 0px;
+      padding:  20px ;
+      }
+      blockquote h2 { padding-right: 40px; margin: 0px; }
+      header.dark blockquote a {color: orange; text-decoration: underline;}
+      header.light blockquote a {text-decoration: underline;}
+      header { min-height: 450px; }
+      header.dark { background-color: #444; }
+      header.light { background-color: #fff; }
+      /* Navigation Styles */
+      nav { position: relative;  }
+      header.dark nav { background-color:rgba(255,255,255,0.5); }
+      header.light nav { background-color:rgba(0,0,0,0.5); }
+      ul.main-nav { 
+      list-style-type: none; 
+      padding: 0px;
+      font-size: 0px;
+      max-width: 1000px;
+      margin: 0 auto;
+      }
+      ul.main-nav > li { 
+      display: inline-block;
+      padding: 0; 
+      }
+      ul.main-nav > li > a { 
+      display: block; 
+      padding: 20px 30px; 
+      position: relative;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 400;
+      box-sizing: border-box;
+      }
+      ul.main-nav > li:hover { background-color: #f9f9f9; }
+      ul.main-nav > li:hover > a { color: #333; font-weight: 400; }
+      ul.main-nav > li ul.sub-menu-lists {
+      margin: 0px;
+      padding: 0px;
+      list-style-type : none;
+      display:block;
+      }
+      ul.main-nav > li ul.sub-menu-lists > li {
+      padding: 2px 0;
+      }
+      ul.main-nav > li ul.sub-menu-lists > li > a {
+      font-size: 4px;
+      }
+      .ic {
+      position: fixed; 
+      cursor: pointer;
+      display: inline-block;
+      right: 25px;
+      width: 32px;
+      height: 24px;
+      text-align: center;
+      top:0px;
+      outline: none;
+      }
+      .ic.close { 
+      opacity: 0; 
+      font-size: 0px; 
+      font-weight: 300; 
+      color: #fff;
+      top:8px;
+      height:40px;
+      display: block;
+      outline: none;
+      }
+      /* Menu Icons for Devices*/
+      .ic.menu { top:25px; z-index : 20; }
+      .ic.menu .line { 
+      height: 4px; 
+      width: 100%; 
+      display: block; 
+      margin-bottom: 6px; 
+      }
+      .ic.menu .line-last-child { margin-bottom: 0px;  }
+      .sub-menu-head { margin: 10px 0; }
+      .banners-area { margin-top: 20px; padding-top: 15px; }
+      @media only screen and (max-width:30000px) {
+      .sub-menu-head { color:orange; }
+      .ic.menu { display: block; }
+      header.dark .ic.menu .line { background-color: #fff; } 
+      header.light .ic.menu .line { background-color: #000; }
+      .ic.menu .line {
+      -webkit-transition: all 0.4s ease 0s;
+      -o-transition: all 0.4s ease 0s;
+      transition: all 0.4s ease 0s;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+      transform-origin: center center;
+      }
+      .ic.menu:focus .line { background-color: #fff !important; }
+      .ic.menu:focus .line:nth-child(1) { 
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); 
+      }
+      .ic.menu:focus .line:nth-child(2) { 
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); 
+      margin-top: -10px;
+      }
+      .ic.menu:focus .line:nth-child(3) {
+      transform: translateY(15px);
+      opacity: 0;
+      }
+      .ic.menu:focus{ outline: none; }
+      .ic.menu:focus ~ .ic.close { opacity: 1; z-index : 21;  outline: none;  }
+      /*
+      .ic.menu:focus ~ .ic.close { opacity: 1.0; z-index : 21;  }
+      .ic.close:focus { opacity: 0; }
+      */
+      .ic.menu:focus { opacity: 1;  }
+      nav { background-color: transparent; }
+      /* Main Menu for Handheld Devices  */
+      ul.main-nav {
+      z-index:2; 
+      padding: 50px 0;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      width: 0px;
+      background-color:black;
+      height: 100%;
+      overflow: auto;
+      /*CSS animation applied : Slide from Right*/
+      -webkit-transition-property: background, width;
+      -moz-transition-property: background, width;
+      -o-transition-property: background, width;
+      transition-property: background, width;
+      -webkit-transition-duration: 0.6s;
+      -moz-transition-duration: 0.6s;
+      -o-transition-duration: 0.6s;
+      transition-duration: 0.6s;
+      }
+      .ic.menu:focus ~ .main-nav { width: 300px; background-color: rgba(0,0,0,0.5);; }
+      ul.main-nav > * { 
+      -webkit-transition-property: opacity;
+      -moz-transition-property: opacity;
+      -o-transition-property: opacity;
+      transition-property: opacity;
+      -webkit-transition-duration: 0.4s;
+      -moz-transition-duration: 0.4s;
+      -o-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      opacity: 0;
+      }
+      .ic.menu:focus ~ .main-nav > * {opacity: 1;}
+      ul.main-nav > li > a:after {display: none;}
+      ul.main-nav > li:first-child { border-radius: 0px; }
+      ul.main-nav > li {
+      display: block;
+      border-bottom: 1px solid #444;
+      }
+      ul.main-nav > li > a { font-weight: 600; }
+      ul.main-nav > li ul.sub-menu-lists > li a { color: #eee; font-size: 30px; }
+      .sub-menu-head { font-size: 30px;}
+      ul.main-nav > li:hover { background-color: transparent;  }
+      ul.main-nav > li:hover > a {color: #fff; text-decoration: none; font-weight: 600;}
+      .ic.menu:focus ~ ul.main-nav > li > div.sub-menu-block {
+      border-left: 0px solid #ccc;
+      border-right: 0px solid #ccc;
+      border-bottom: 0px solid #ccc;
+      position: relative;
+      visibility: visible;
+      opacity: 1.0;
+      }
+      .sub-menu-block { padding: 0 30px; }
+      .banners-area { padding-bottom: 0px;  }
+      .banners-area div { margin-bottom: 15px;  }
+      .banners-area { border-top: 1px solid #444; }
+      }
+      @media only screen and (min-width:30000px) {
+      .ic.menu { display: none; }
+      /* Main Menu for Desktop Devices  */
+      ul.main-nav { display: block; position: relative; }
+      .sub-menu-block { padding: 15px; }
+      /* Sub Menu */
+      ul.main-nav > li > div.sub-menu-block { 
+      visibility: hidden;
+      background-color: green;
+      position: absolute;
+      margin-top: 0px;
+      width: 100%;
+      color: #333;
+      left: 0;
+      box-sizing: border-box;
+      z-index : 3;
+      font-size: 16px;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      opacity: 0;
+      /*CSS animation applied for sub menu : Slide from Top */
+      -webkit-transition: all 0.4s ease 0s;
+      -o-transition: all 0.4s ease 0s;
+      transition: all 0.4s ease 0s;
+      -webkit-transform: rotateX(90deg);
+      -moz-transform: rotateX(90deg);
+      -ms-transform: rotateX(90deg);
+      transform: rotateX(90deg);
+      -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+      transform-origin: top center;
+      }
+      ul.main-nav > li:hover > div.sub-menu-block{ 
+      background-color: #f9f9f9; 
+      visibility: visible;
+      opacity: 1;
+      -webkit-transform: rotateX(0deg);
+      -moz-transform: rotateX(0deg);
+      -ms-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      }
+      ul.main-nav > li > div.sub-menu-block > * {
+      -webkit-transition-property: opacity;
+      -moz-transition-property: opacity;
+      -o-transition-property: opacity;
+      transition-property: opacity;
+      -webkit-transition-duration: 0.4s;
+      -moz-transition-duration: 0.4s;
+      -o-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      opacity: 0;
+      }
+      ul.main-nav > li:hover > div.sub-menu-block > * {
+      opacity: 1;
+      }
+      .sub-menu-head { font-size: 20px;}
+      /* List Separator: Outer Border */
+      header.dark ul.main-nav > li > a { border-right: 1px solid #bbb; }
+      header.light ul.main-nav > li > a { border-right: 1px solid #666; }
+      /* List Separator: Inner Border */
+      ul.main-nav > li > a:after {
+      content: '';
+      width: 1px;
+      height: 62px;
+      position: absolute;
+      right:0px;
+      top: 0px;
+      z-index : 2;
+      }
+      header.dark ul.main-nav > li > a:after { background-color: #777; }
+      header.light ul.main-nav > li > a:after { background-color: #999; }
+      /* Drop Down/Up Arrow for Mega Menu */
+      ul.main-nav > li > a.mega-menu > span { display: block; vertical-align: middle; }
+      ul.main-nav > li > a.mega-menu > span:after {
+      width: 0; 
+      height: 0; 
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #fff;
+      content: '';
+      background-color: transparent;
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+      }
+      ul.main-nav > li:hover > a.mega-menu span:after{
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 0px solid transparent;
+      border-bottom: 5px solid #666;
+      }
+      .banners-area { border-top: 1px solid #ccc; }
+      }
+      ul li a {
+      background: black;
+      }
+      ul.menu > li > a:active:before {
+      background-color: blue;
+      }
+   </style>
+   <script></script>
+   <!-- Available in two variations: "light" and "dark" | Change <header> class to see impact. -->
+   <header class="dark">
+      <nav role="navigation">
+         <a href="javascript:void(0);" class="ic menu">
+         <span class="line"></span>
+         <span class="line"></span>
+         <span class="line"></span>
+         </a>
+         <a href="javascript:void(0);" class="ic close"></a>
+         <ul class="main-nav">
+         
+            <li class="top-level-link">
+               <div class="sub-menu-block">
+               <div class="row">
+               <div class="col-md-4 col-lg-4 col-sm-4">
+                  <h2 class="sub-menu-head"></h2>
+                  <ul class="sub-menu-lists">
+                     <li><a href="#">INICIO</a></li>
+                     <li><a href="#TDTtve">TVE</a></li>
+                     <li><a href="#TDTla2">LA 2</a></li>
+                     <li><a href="#TDT24h">24H-TVE</a></li>
+                     <li><a href="#TDTclan">CLAN</a></li>
+                  </ul>
+				  
+               </div>
+            </li>
+			
+            <li class="top-level-link">
+               <div class="sub-menu-block">
+               <div class="row">
+               <div class="col-md-4 col-lg-4 col-sm-4">
+                  <ul class="sub-menu-lists">
+                     <li><a href="#TDTtv3cat">TV3 CAT.</a></li>
+					 <li><a href="#TDTsuper3">Super3 CAT.</a></li>
+                     <li><a href="#TDTcosmohd">COSMO HD</a></li>
+                     <li><a href="#TDTcazavisionhd">CAZAVISION1.HD</a></li>
+                    
+                  </ul>
+               </div>
+            </li>
+            <li class="top-level-link">
+               <div class="sub-menu-block">
+               <div class="row">
+               <div class="col-md-4 col-lg-4 col-sm-4">
+                  <ul class="sub-menu-lists">
+				     <li><a href="#TDTatresseries">ATRESERIES</a></li>
+					 <li><a href="#TDTeltorotv">ELTOROTV</a></li>
+					 <li><a href="#TDTmtmad24">MTMAD24H</a></li>
+
+				</ul>
+               </div>
+            </li>
+            <li class="top-level-link">
+               <div class="sub-menu-block">
+               <div class="row">
+               <div class="col-md-4 col-lg-4 col-sm-4">
+                  <h2 class="sub-menu-head"></h2>
+                   <ul class="sub-menu-lists">
+				   	 <a href="#categPLUTO">PLUTO TV</a>
+                     <li><a href="#categPLUTOcine">PLUTO CINE</a></li>
+                     <li><a href="#categPLUTOseries">PLUTO SERIES</a></li>
+					 <li><a href="#TDTlinksexta">LA SEXTA (EXT)</a></li>
+                    </ul>
+               </div>
+            </li>
+            
+         </ul>
+      </nav>
+      <blockquote>
+      <div >
+      <h1 id="inicio">Inicio</h1><br><br><br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> Inicio <br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </p>
+      <a href="#contenido1">Ir a Contenido1></a><br>
+      <a href="#contenido2">Ir a Contenido2></a>
+      <p>
+      <h1 id="contenido1">Contenido 1</h1><br><br><br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> Contenido 1<br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> Inicio<br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </p>
+      <h1 id="contenido2">Contenido 2</h1><br><br><br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 id="contenido1">Contenido 1</h1><br><br><br>
+      <h1 >TDT GEO</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <h1 id="TDTtve">TVE</h1>
+      <a href="https://rtvelivestream.akamaized.net/la1_dvr.m3u8">LINK</a>
+      <video id="my_video_2" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://rtvelivestream.akamaized.net/la1_dvr.m3u8" type="application/x-mpegURL">
+      </video>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <h1 id="TDTla2">La 2</h1>
+      <div>
+      <a href="https://rtvelivestream.akamaized.net/la2_dvr.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://rtvelivestream.akamaized.net/la2_dvr.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <h1 id="TDT24h">24h</h1>
+      <div>
+      <a href="https://rtvelivestream.akamaized.net/24h_dvr.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://rtvelivestream.akamaized.net/24h_dvr.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <h1 id="TDTclan">CLAN</h1>
+      <div>
+      <a href="https://hlsliveamdgl1-lh.akamaihd.net/i/hlslive_1@356291/master.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://hlsliveamdgl1-lh.akamaihd.net/i/hlslive_1@356291/master.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <h1 id="TDTcazavisionhd">CAZAVISION HD</h1>
+      <div>
+      <a href="https://cdn039.fractalmedia.es/hls/caz_es_high.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://cdn039.fractalmedia.es/hls/caz_es_high.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <h1 id="TDTcosmohd">COSMO HD</h1>
+      <div>
+      <a href="http://91.126.141.201:1935/live/smil:cosmoHD.smil/playlist.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="http://91.126.141.201:1935/live/smil:cosmoHD.smil/playlist.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      <br> </br>
+      <br> </br>
+	  
+       <h1 id="TDTtv3cat">TV3 CATALANA</h1>
+      <div>
+      <a href="https://directes-tv-cat.ccma.cat/cat/ngrp:tv3_web/playlist.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://directes-tv-cat.ccma.cat/cat/ngrp:tv3_web/playlist.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+	  <br> </br>
+      <br> </br>
+      <br> </br>
+	  <!--TEST DE VIDEO HLS DE PRUEBA AQUÍ MODELO-->
+        <h1 id="TDTsuper3">Super3 (Cat)</h1>
+		      <div class="container">
+      <a href="https://directes-tv-cat.ccma.cat/cat/ngrp:c33_web/chunklist_b4128000_DVR.m3u8">LINK</a>
+      <div>
+   
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://directes-tv-cat.ccma.cat/cat/ngrp:c33_web/chunklist_b4128000_DVR.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+	  <br> </br>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <br> </br>
+      <h1 id="TDTatresseries">ATRESERIES</h1>
+      <div>
+      <a href="https://livestartover.atresmedia.com/a3series/bitrate_4.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://livestartover.atresmedia.com/a3series/bitrate_4.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+   
+      <br> </br>
+      <br> </br>
+      <br> </br>
+        <h1 id="TDTeltorotv">EL TOROTV</h1>
+      <div>
+      <a href="https://live1-eltorotv.flumotion.com/chunks.m3u8">LINK</a>
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://live1-eltorotv.flumotion.com/chunks.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      
+	  <br> </br>
+      <br> </br>
+      <br> </br>
+	   <!--TEST DE VIDEO HLS DE PRUEBA AQUÍ MODELO-->
+        <h1 id="TDTmtmad24">MTMAD24H</h1>
+		      <div class="container">
+      <a href="https://mdssplive-lh.akamaihd.net/i/mtmad_1@744785/index_2500_av-b.m3u8">LINK</a>
+      <div>
+   
+      <video id="my_video_1" controls="true"  class="video-js vjs-fluid vjs-default-skin" 
+         data-setup='{}'>
+      <source src="https://mdssplive-lh.akamaihd.net/i/mtmad_1@744785/index_2500_av-b.m3u8" type="application/x-mpegURL">
+      </video>
+      </div>
+      <br> </br>
+<div>
+      </div>
+      <div>
+      <br> </br>
+      <h1 id="TDTlinksexta">La Sexta directo</h1>
+      <div><a href="https://www.atresplayer.com/directos/lasexta/">LINK</a>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 id="contenido1">Contenido 1</h1>
+      <a href="#inicio">Volver a Inicio<</a><br>
+      <a href="#contenido2">Ir a contenido2></a>
+      <p>
+      <h1 id="contenido3">SECCIÓN-PLUTOTV</h1><br><br><br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+      </p>
+      <h1 id="categPLUTO">Categorias</h1>
+      <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+      </p>
+      <br>
+      <br>
+      <h1 id="categPLUTOcine">CINE</h1>
+      <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-estelar-es">Pluto TV - Estelar </a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-accion-es">Pluto TV - ACCION ES</a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-sci-fi-es">Pluto TV - SCI-FI </a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-thrillers-es">Pluto TV - THRILLERS </a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-romantico-es">Pluto TV - CINE ROMANTICO</a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-drama-es">Pluto TV - CINE DRAMA ES</a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-cine-comedia-es">Pluto TV - CINE COMEDIA</a><br>
+      <br> <a href="https://pluto.tv/live-tv/cine-latino-es">Pluto TV - CINE LATINO ES</a><br>
+      <h1 id="categPLUTOseries">SERIES</h1>
+      <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br> <a href="https://pluto.tv/live-tv/andromeda-es">Pluto TV - ANDROMEDA ES </a><br>
+      <br> <a href="https://pluto.tv/live-tv/las-reglas-del-juego-es">Pluto TV - LAS REGLAS DEL JUEGO</a><br>
+      <br> <a href="https://pluto.tv/live-tv/los-asesinatos-de-midsomer-es">Pluto TV - los-asesinatos-de-midsomer-es </a><br>
+      <br> <a href="https://pluto.tv/live-tv/curro-jimenez-es">Pluto TV - curro-jimenez-es </a><br>
+      <br> <a href="https://pluto.tv/live-tv/mutante-x-es">Pluto TV - mutante-x-es</a><br>
+      <br> <a href="https://pluto.tv/live-tv/pluto-tv-series-es">Pluto TV - tv-series-es</a><br>
+      <h1 id="categPLUTOmtv">MTV</h1>
+      <p><a  href="#inicio"> Inicio </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv">/ > Ir a MTV </a> <a href="#contenido2"> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+      <li>
+      <p><a  href="#menu"> Menú Principal </a><a href="#categPLUTOcine">/ > Ir a CINE </a><a href="#categPLUTOseries">/ > Ir a SERIES </a><a href="#contenido3"><a href="#categPLUTOmtv"><a href="" > Ir a MTV </a> <a href="#contenido2"> Ir a PlutoTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br> <a href="https://pluto.tv/live-tv/mtv-originals-es">MTV - ORIGINALS ES </a><br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> Contenido 1<br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </p>
+      <h1 id="contenido2">Contenido 2</h1>
+      <a href="#inicio">Volver a Inicio<</a><br>
+      <a href="#contenido1">Ir a contenido1<</a>
+      <p><br><br><br>
+      <h1 id="contenido4">Canales IPTV</h1><br><br><br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br>
+      <br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#cineestable">/ > Ir a CineEstable / </a> <a href="#contenido4">Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br>
+      <br>
+      <h1 id="cineestable">Canales IPTV - CINE ESTABLE</h1><br><br><br>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3"><a> Ir a PlutoTV </a><a href="#contenido4">/ > Ir a CanalesIPTV </a><a href="#acercade">/ > Acerca de </a>
+      <li>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#cineestable">/ > Ir a CineEstable / </a> <a href="#contenido4">Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+      <br>
+      <br>
+      <br>
+      <a href="http://k4.usastreams.com/ARBtv/ARBtv/playlist.m3u8">TELESISTEMA-ACCEDER</a>
+      <br>
+      <br>
+      <a href="http://Stmv1.zcastbr.com/cineclubtv/cineclubtv/playlist.m3u8">CINECLUB-ACCEDER</a>
+      <br>
+      <br>
+      <a href="https://cloud2.streaminglivehd.com:1936/8070/8070/playlist.m3u8?PlaylistM3UCL">FMTV1-ACCEDER</a>
+      <br>
+      <br>
+      <a href="https://rtmp02.portalexpress.es/fmtvmovies2/fmtvmovies2/playlist.m3u8?PlaylistM3UCL">FMTV2-ACCEDER</a>
+      <br>
+      <br>
+      <a href="https://rtmp02.portalexpress.es/fmtv3/fmtv3/playlist.m3u8?PlaylistM3UCL">FMTV3-ACCEDER</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </p>
+      <h1 id="acercade">Acerca de</h1>
+      <p><a href="#inicio">Ir a Inicio > / </a><a href="#contenido1">Ir a Contenido1 > / </a><a href="#contenido2">Ir a TDTGEO > </a><a href="#contenido3">/ > Ir a PlutoTV </a><a href="#contenido4">/ > Ir a Canales IPTV </a><a href="#acercade">/ > Acerca de </a>
+      </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> Acerca de<br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br> Contenido 2<br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </p>
+      </div>
+      </div>
+      </blockquote>
+   </header>
+   <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   </head>
+   <body>
+   </body>
+</html>
+
   </body><div class="foot"><header>
         <div class="container">
 		<!--Nombre de aplicacion!-->
