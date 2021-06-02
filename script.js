@@ -7,16 +7,11 @@ const logoSrc =
 function App() {
   return /*#__PURE__*/(
     
-    React.createElement("div", { className: "App" }, /*#__PURE__*/
-                        
-    React.createElement("header", { className: "App-header" }, /*#__PURE__*/
-                        
-    React.createElement("img", { src: logoSrc, className: "App-logo", alt: "logo" }), /*#__PURE__*/
-                        
-    React.createElement("p", null, "Edita ", /*#__PURE__*/
-                        
-    React.createElement("code", null, "src/App.js"), "!"), /*#__PURE__*/
-                        
+    React.createElement("div", { className: "App" }, /*#__PURE__*/                        
+    React.createElement("header", { className: "App-header" }, /*#__PURE__*/                        
+    React.createElement("img", { src: logoSrc, className: "App-logo", alt: "logo" }), /*#__PURE__*/                        
+    React.createElement("p", null, "Edita ", /*#__PURE__*/                        
+    React.createElement("code", null, "src/App.js"), "!"), /*#__PURE__*/                        
 
     React.createElement("a", {
       className: "App-link",
